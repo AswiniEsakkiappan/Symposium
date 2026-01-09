@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>FlyerNova - Registration</title>
+    <title>READY SET HOST - Anchoring Registration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('ADZAPphoto.jpg') center/cover no-repeat;
+            background: url('anchoringimg.jpg') center/cover no-repeat;
             z-index: -1;
         }
 
@@ -177,6 +177,8 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
         }
 
         /* Registration Form Card */
@@ -224,39 +226,11 @@
             font-size: 15px;
         }
 
-        .name-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 0;
-        }
 
         .name-row input {
             width: 100%;
-            margin-bottom: 4px;
         }
 
-        .food-options label {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        .food-options input[type="radio"] {
-            width: auto;
-            padding: 0;
-            margin: 0;
-        }
-
-        .food-options select {
-            width: 60px;
-            padding: 5px;
-            margin: 0;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-        }
 
         /* Button */
         .register-btn {
@@ -294,12 +268,15 @@
             background-color: white;
         }
 
-        .field-group {
-            margin-bottom: 8px;
+        .radio-error {
+            color: #ff6b6b;
+            font-size: 13px;
+            margin: 4px 0 8px 35px;
+            display: none;
         }
 
-        .name-field-group {
-            margin-bottom: 0;
+        .field-group {
+            margin-bottom: 8px;
         }
 
         /* ... rest of your form styles remain the same ... */
@@ -353,6 +330,7 @@
     <a href="index.html" class="floating-back-btn">
         <i class="fas fa-arrow-left me-2"></i> Back to Home
     </a>
+
     <!-- STEPPER AT TOP -->
     <div class="stepper-container">
         <div class="stepper">
@@ -379,56 +357,32 @@
                     <h2 style="color: white;">Event Registration</h2>
                     <form id="eventForm">
                         <!-- Form fields with validation -->
-                        <label>Name:</label>
-                        <div class="name-row name-field-group">
-                            <div style="width: 100%;">
+                        <div class="field-group">
+                            <label>Name:</label>
+                            <div class="name-row">
                                 <input type="text" placeholder="Participant-1" id="Participant-1" required>
-                                <div class="error-message" id="error-Participant-1"></div>
                             </div>
-                            <div style="width: 100%;">
-                                <input type="text" placeholder="Participant-2" id="Participant-2" required>
-                                <div class="error-message" id="error-Participant-2"></div>
-                            </div>
+                            <div class="error-message" id="error-Participant-1"></div>
                         </div>
-                        <div class="name-row name-field-group">
-                            <div style="width: 100%;">
-                                <input type="text" placeholder="Participant-3" id="Participant-3" required>
-                                <div class="error-message" id="error-Participant-3"></div>
-                            </div>
-                            <div style="width: 100%;">
-                                <input type="text" placeholder="Participant-4" id="Participant-4" required>
-                                <div class="error-message" id="error-Participant-4"></div>
-                            </div>
-                        </div>
-                        <div class="name-row name-field-group">
-                            <div style="width: 100%;">
-                                <input type="text" placeholder="Participant-5" id="Participant-5" required>
-                                <div class="error-message" id="error-Participant-5"></div>
-                            </div>
-                            <div style="width: 100%;">
-                                <input type="text" placeholder="Participant-6" id="Participant-6" required>
-                                <div class="error-message" id="error-Participant-6"></div>
-                            </div>
-                        </div>
-
+                        
                         <div class="field-group">
                             <label>Email:</label>
                             <input type="email" placeholder="Email" id="email" required>
                             <div class="error-message" id="error-email"></div>
                         </div>
-
+                        
                         <div class="field-group">
                             <label>Mobile Number:</label>
                             <input type="tel" placeholder="mobile number" id="mobile" required>
                             <div class="error-message" id="error-mobile"></div>
                         </div>
-
+                        
                         <div class="field-group">
                             <label>College Name:</label>
                             <input type="text" placeholder="college/organization" id="college" required>
                             <div class="error-message" id="error-college"></div>
                         </div>
-
+                        
                         <div class="field-group">
                             <label>Course:</label>
                             <select id="course" required>
@@ -440,7 +394,7 @@
                             </select>
                             <div class="error-message" id="error-course"></div>
                         </div>
-
+                        
                         <div class="field-group">
                             <label>City</label>
                             <select id="city" required>
@@ -452,94 +406,76 @@
                             </select>
                             <div class="error-message" id="error-city"></div>
                         </div>
-
+                        
                         <div class="field-group">
                             <label>Food:</label>
                             <div class="food-group" style="margin-left: 35px;">
-                                <div class="food-options" style="display: flex; flex-direction: row; gap: 10px;">
-                                    <label>Veg</label>
-                                    <select id="veg" onchange="updateFromVeg()" required>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-
-                                    <br><br>
-
-                                    <label>Non-Veg</label>
-                                    <select id="nonveg" onchange="updateFromNonVeg()">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
+                                <div class="food-options">
+                                    <label
+                                        style="font-size: medium; font-weight: normal; text-transform: none; margin-top: 0; ">
+                                        <input type="radio" name="food" value="veg" id="veg" required>
+                                        Veg
+                                    </label>
+                                    <label
+                                        style="font-size: medium; font-weight: normal; text-transform: none; margin-top: 0; ">
+                                        <input type="radio" name="food" value="nonveg" id="nonveg">
+                                        Non-Veg
+                                    </label>
                                 </div>
                             </div>
-                            <div class="error-message" id="error-food"></div>
+                            <div class="radio-error" id="error-food"></div>
                         </div>
-
+                        
                         <div class="register-btn">
-                            <button type="button" id="registerBtn" class="btn btn-primary"
-                                onclick="validateForm()">Submit</button>
+                            <button type="button" id="registerBtn" class="btn btn-primary" onclick="validateAndSubmit()">Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         emailjs.init("dYntpHKXVNCh64FLi");
-
-        const total = 6;
-
-        function updateFromVeg() {
-            const veg = document.getElementById("veg").value;
-            if (veg !== "") {
-                document.getElementById("nonveg").value = total - veg;
-            }
-            clearError('food');
-        }
-
-        function updateFromNonVeg() {
-            const nonveg = document.getElementById("nonveg").value;
-            if (nonveg !== "") {
-                document.getElementById("veg").value = total - nonveg;
-            }
-            clearError('food');
-        }
-
+        
         // Validation functions
         function showError(fieldId, message) {
             const errorElement = document.getElementById(`error-${fieldId}`);
             const inputElement = document.getElementById(fieldId);
-
+            
             if (errorElement && inputElement) {
                 errorElement.textContent = message;
                 errorElement.style.display = 'block';
                 inputElement.classList.add('input-error');
-
+                
                 // Scroll to the error field
                 inputElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 inputElement.focus();
+            }
+        }
+        
+        function showRadioError(fieldId, message) {
+            const errorElement = document.getElementById(`error-${fieldId}`);
+            
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                
+                // Scroll to food section
+                document.getElementById('veg').scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
 
         function clearError(fieldId) {
             const errorElement = document.getElementById(`error-${fieldId}`);
             const inputElement = document.getElementById(fieldId);
-
-            if (errorElement && inputElement) {
+            
+            if (errorElement) {
                 errorElement.textContent = '';
                 errorElement.style.display = 'none';
+            }
+            
+            if (inputElement) {
                 inputElement.classList.remove('input-error');
             }
         }
@@ -547,14 +483,14 @@
         function validateField(fieldId, fieldName, isSelect = false) {
             const field = document.getElementById(fieldId);
             const value = field.value.trim();
-
-            if (!value) {
+            
+            if (!value || (isSelect && value === "")) {
                 showError(fieldId, `${fieldName} is required`);
                 return false;
             }
-
+            
             // Special validations for specific fields
-            switch (fieldId) {
+            switch(fieldId) {
                 case 'email':
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(value)) {
@@ -562,7 +498,7 @@
                         return false;
                     }
                     break;
-
+                    
                 case 'mobile':
                     const mobileRegex = /^[0-9]{10}$/;
                     if (!mobileRegex.test(value)) {
@@ -570,108 +506,118 @@
                         return false;
                     }
                     break;
-
-                case 'veg':
-                case 'nonveg':
-                    const veg = parseInt(document.getElementById('veg').value);
-                    const nonveg = parseInt(document.getElementById('nonveg').value);
-                    if (veg + nonveg !== total) {
-                        showError('food', `Total food count must be ${total} (${veg} veg + ${nonveg} non-veg = ${veg + nonveg})`);
+                    
+                case 'Participant-1':
+                    if (value === "N/A") {
+                        showError('Participant-1', 'Please enter your name');
                         return false;
                     }
                     break;
             }
-
+            
             clearError(fieldId);
             return true;
         }
-
-        function validateForm() {
-            let isValid = true;
-
-            // Validate all participant names
-            for (let i = 1; i <= 6; i++) {
-                if (!validateField(`Participant-${i}`, `Participant ${i}`)) {
-                    isValid = false;
-                }
+        
+        function validateFoodSelection() {
+            const selectedFood = document.querySelector('input[name="food"]:checked');
+            
+            if (!selectedFood) {
+                showRadioError('food', 'Please select a food option');
+                return false;
             }
+            
+            clearError('food');
+            return true;
+        }
 
-            // Validate other fields
+        function validateAndSubmit() {
+            let isValid = true;
+            
+            // Validate all fields
             const fields = [
+                { id: 'Participant-1', name: 'Name' },
                 { id: 'email', name: 'Email' },
                 { id: 'mobile', name: 'Mobile number' },
                 { id: 'college', name: 'College name' },
                 { id: 'course', name: 'Course', isSelect: true },
                 { id: 'city', name: 'City', isSelect: true }
             ];
-
+            
             fields.forEach(field => {
                 if (!validateField(field.id, field.name, field.isSelect)) {
                     isValid = false;
                 }
             });
-
+            
             // Validate food selection
-            const veg = parseInt(document.getElementById('veg').value);
-            const nonveg = parseInt(document.getElementById('nonveg').value);
-            if (veg + nonveg !== total) {
-                showError('food', `Total food count must be ${total} (currently ${veg + nonveg})`);
+            if (!validateFoodSelection()) {
                 isValid = false;
-            } else {
-                clearError('food');
             }
-
+            
             // If all validations pass, submit the form
             if (isValid) {
                 sendEmail();
             }
-
+            
             return false; // Prevent form submission
         }
 
         // Add real-time validation on input change
-        document.addEventListener('DOMContentLoaded', function () {
-            const inputs = document.querySelectorAll('input, select');
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], select');
             inputs.forEach(input => {
-                input.addEventListener('input', function () {
+                input.addEventListener('input', function() {
                     const fieldId = this.id;
-                    if (fieldId && fieldId !== 'veg' && fieldId !== 'nonveg') {
-                        validateField(fieldId, fieldId.replace('-', ' '));
+                    if (fieldId) {
+                        const fieldName = fieldId === 'Participant-1' ? 'Name' : fieldId;
+                        validateField(fieldId, fieldName, this.tagName === 'SELECT');
                     }
                 });
-
-                input.addEventListener('change', function () {
+                
+                input.addEventListener('change', function() {
                     const fieldId = this.id;
-                    if (fieldId && fieldId !== 'veg' && fieldId !== 'nonveg') {
-                        validateField(fieldId, fieldId.replace('-', ' '));
+                    if (fieldId) {
+                        const fieldName = fieldId === 'Participant-1' ? 'Name' : fieldId;
+                        validateField(fieldId, fieldName, this.tagName === 'SELECT');
                     }
+                });
+            });
+            
+            // Add validation for radio buttons
+            const radioButtons = document.querySelectorAll('input[name="food"]');
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    validateFoodSelection();
                 });
             });
         });
 
         function sendEmail() {
             const Participant1 = document.getElementById('Participant-1').value.trim();
-            const Participant2 = document.getElementById('Participant-2').value.trim();
-            const Participant3 = document.getElementById('Participant-3').value.trim();
-            const Participant4 = document.getElementById('Participant-4').value.trim();
-            const Participant5 = document.getElementById('Participant-5').value.trim();
-            const Participant6 = document.getElementById('Participant-6').value.trim();
             const email = document.getElementById('email').value.trim();
             const mobile = document.getElementById('mobile').value.trim();
             const college = document.getElementById('college').value.trim();
             const course = document.getElementById('course').value;
             const city = document.getElementById('city').value;
-            const veg = document.getElementById('veg').value || "0";
-            const nonveg = document.getElementById('nonveg').value || "0";
+            const selectedFood = document.querySelector('input[name="food"]:checked');
+            
+            let veg = '0';
+            let nonveg = '0';
+            
+            if (selectedFood) {
+                if (selectedFood.value == 'veg') {
+                    veg = '1';
+                    nonveg = '0';
+                } else if (selectedFood.value == 'nonveg') {
+                    nonveg = '1';
+                    veg = '0';
+                }
+            }
 
             const templateParams = {
-                'eventname': 'Flyer Nova',
+                'eventname': "READY SET HOST",
                 'Participant-1': Participant1,
-                'Participant-2': Participant2,
-                'Participant-3': Participant3,
-                'Participant-4': Participant4,
-                'Participant-5': Participant5,
-                'Participant-6': Participant6,
                 'email': email,
                 'phone': mobile,
                 'college': college,
@@ -695,7 +641,7 @@
                     btn.textContent = "Submitted ✔";
                     document.getElementById("eventForm").reset();
                     setTimeout(() => {
-                        window.location.href = "adzapconfirmation.html";
+                        window.location.href = "anchoringconfirmation.html";
                     }, 500);
                 }, function (error) {
                     console.log('FAILED...', error);

@@ -31,13 +31,38 @@
       background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('eve.jpg') center top / cover no-repeat fixed;
       min-height: 100vh;      
     }
-  
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      transition: all 0.4s ease;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 4px solid  hsl(229, 100%, 50%)(255, 230, 0, 0.7);
+    }
+
+    header.scrolled {
+      background: rgba(10, 26, 31, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      border-bottom: 3px solid  hsl(244, 100%, 50%);
+    }
     
     .logo {
       display: flex;
       align-items: center;
       gap: 5px;
     }
+
 
     .logo img {
       object-fit: contain;
@@ -50,7 +75,7 @@
     }
 
     .logo-text strong {
-      color: hsl(255, 93%, 28%);
+      color:  hsl(244, 100%, 50%);
       font-size: 40px;
     }
 
@@ -60,7 +85,7 @@
     }
 
     .nav-desktop a {
-      color: hsl(255, 93%, 28%);
+      color: white;
       text-decoration: none;
       padding: 8px 16px;
       border-radius: 6px;
@@ -70,7 +95,7 @@
     }
 
     .nav-desktop a:hover {
-      background:hsl(255, 93%, 28%);
+      background:  hsl(244, 100%, 50%);
       color: #000;
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(255, 230, 7, 0.3);
@@ -88,7 +113,7 @@
     .menu-toggle span {
       height: 3px;
       width: 100%;
-      background-color: hsl(255, 93%, 28%);
+      background-color: white;
       border-radius: 3px;
       transition: 0.3s;
     }
@@ -112,7 +137,7 @@
     }
 
     .nav-mobile a {
-      color: hsl(255, 93%, 28%);
+      color: white;
       text-decoration: none;
       padding: 14px 20px;
       border-radius: 6px;
@@ -131,27 +156,27 @@
     }
 
     .nav-mobile a.active {
-      background: hsl(255, 93%, 28%);
-      border-left: 4px solid hsl(255, 93%, 28%);
+      background:  hsl(244, 100%, 50%);
+      border-left: 4px solid  hsl(244, 100%, 50%);
       font-weight: bold;
     }
 
     .nav-mobile a:hover {
-      background: hsl(255, 93%, 28%);
-      border-left: 3px solid hsl(255, 93%, 28%);
+      background:  hsl(244, 100%, 50%);
+      border-left: 3px solid hsl(244, 100%, 50%);
       padding-left: 25px;
     }
 
     .nav-desktop a.active {
-      background: hsl(255, 93%, 28%);
-      border-left: 4px solid hsl(255, 93%, 28%);
+      background:  hsl(244, 100%, 50%);
+      border-left: 4px solid   hsl(244, 100%, 50%);
       font-weight: bold;
       color: black;
     }
 
     .nav-desktop a:hover {
-      background: hsl(255, 93%, 28%);
-      border-left: 3px solid hsl(255, 93%, 28%);
+      background:  hsl(244, 100%, 50%);
+      border-left: 3px solid  hsl(244, 100%, 50%);
       padding-left: 25px;
     }
 
@@ -316,7 +341,7 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #ff6f6f, hsl(255, 93%, 28%), #1f4a55);
+      background: linear-gradient(90deg, #ff6f6f, #ffeb3b, #1f4a55);
     }
 
     .about h2 {
@@ -520,7 +545,7 @@
       }
 
       .logo-text strong {
-        color: hsl(255, 93%, 28%);
+        color:  hsl(255, 93%, 28%);
         font-size: 14px;
         display: block;
       }
@@ -901,7 +926,7 @@
       VISIONARY VIBES is where ideas collide, skills ignite, and creativity goes full beast mode.
       With 10 power-packed technical and non-technical events, it’s a playground for thinkers, builders, and rule-breakers alike.
     </p>
-  </section>
+  
 
   <section class="about">
     <h2>About FACEPrep Campus</h2>
@@ -964,7 +989,7 @@
         <!-- 3 VISION VAULT -->
         <div class="col">
           <div class="card h-100">
-            <img src="Visio vault.jpeg" class="gallery-img">
+            <img src="Vision vault.jpeg" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">Vision Vault</h5>
               <p class="text-muted">Research Meets Reality</p>
@@ -1069,7 +1094,7 @@
     </div>
   </div>
 
-  <!-- <div class="container py-5" id="gallerys">
+  <div class="container py-5" id="gallerys">
     <div class="text-center mb-5">
       <h1 class="display-5 section-title text-white">Gallery</h1>
     </div>
@@ -1577,6 +1602,21 @@
             </div>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <section class="mb-5" data-aos="fade-up" data-aos-duration="1000">
+      <div class="section-header text-center">
+        <h1 class="display-5 section-title">I B.Sc with AI <span class="text-primary">2025-2028</span></h1>
+        <p class="lead text-secondary mt-3">
+          <i class="fas fa-university me-2"></i>
+          Empowering students with financial knowledge and strong computing foundations.
+        </p>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="card glass-card h-100 border-0">
             <div id="carouselBCom1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1606,10 +1646,38 @@
           </div>
         </div>
 
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div class="card glass-card h-100 border-0">
+            <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2400"><img
+                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/IMG_3386.JPG"
+                    class="d-block w-100"></div>
+                <div class="carousel-item" data-bs-interval="2400"><img
+                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Monica S.jpg"
+                    class="d-block w-100"></div>
+                <div class="carousel-item" data-bs-interval="2400"><img
+                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Villaswathi P.jpg"
+                    class="d-block w-100"></div>
+                <div class="carousel-item" data-bs-interval="2400"><img
+                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Meera Raliya M I.jpg"
+                    class="d-block w-100"></div>
+                <div class="carousel-item" data-bs-interval="2400"><img
+                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Supriya S.jpg"
+                    class="d-block w-100"></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="batch-badge">Science</span>
+              <h5 class="card-title">I B.Sc CS with AI</h5>
+              <p class="card-text text-muted">An innovative event where applications are created without writing a
+                single line of code!</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
-
-   
         <section class="mb-5" data-aos="fade-up" data-aos-duration="1000">
       <div class="section-header text-center">
         <h1 class="display-5 section-title">KAMARAJ WOMEN'S COLLEGE BSC CS WITH AI <span class="text-primary">2025-2028</span></h1>
@@ -1707,41 +1775,12 @@
                         </div>
                     </div>
                 </div>
-               <div class="col" data-aos="fade-up" data-aos-delay="200">
-          <div class="card glass-card h-100 border-0">
-            <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/IMG_3386.JPG"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Monica S.jpg"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Villaswathi P.jpg"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Meera Raliya M I.jpg"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Supriya S.jpg"
-                    class="d-block w-100"></div>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="batch-badge">Science</span>
-              <h5 class="card-title">I B.Sc CS with AI</h5>
-              <p class="card-text text-muted">An innovative event where applications are created without writing a
-                single line of code!</p>
-            </div>
-          </div>
-        </div>
 
             </div>
         </section>
 
   </div>
-  </div> -->
+  </div>
   <footer>
     © 2026 Kamaraj College | FACE Prep Campus | Visionary Vibes Event | All Rights Reserved
   </footer>
@@ -1881,5 +1920,3 @@
 </body>
 
 </html>
-
-

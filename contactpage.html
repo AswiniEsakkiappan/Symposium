@@ -26,25 +26,27 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ---------- BACK BUTTON ---------- */
+/* ---------- BACK BUTTON (MATCHES FIRST PAGE EXACTLY) ---------- */
 .floating-back-btn {
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     color: white;
-    padding: 10px 22px;
+    padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .floating-back-btn:hover {
-    background: #ffffff;
-    color: #000;
+    background: white;
+    color: #333;
+    transform: translateX(5px);
 }
 
 /* ---------- HEADINGS ---------- */
@@ -107,7 +109,7 @@ textarea:focus {
     box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.4);
 }
 
-/* ---------- BUTTON (UPDATED) ---------- */
+/* ---------- BUTTON ---------- */
 .btn-primary {
     border-radius: 30px;
     font-weight: 600;
@@ -142,8 +144,9 @@ hr {
 
 <body>
 
+<!-- BACK BUTTON -->
 <a href="index.html" class="floating-back-btn">
-    <i class="fas fa-arrow-left me-2"></i> Back to Home
+    Back to Home
 </a>
 
 <div class="container py-5">
@@ -196,7 +199,7 @@ hr {
 
             <p class="text-center mb-1">Or email us directly at</p>
             <p class="text-center fw-semibold email-link">
-                <a href="mailto:visionaryvibes2026@gmail.com">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=visionaryvibes2026@gmail.com" target="_blank">
                     visionaryvibes2026@gmail.com
                 </a>
             </p>

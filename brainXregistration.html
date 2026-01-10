@@ -39,29 +39,6 @@
             z-index: -1;
         }
 
-        /* Floating Back Button */
-        .floating-back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .floating-back-btn:hover {
-            background: white;
-            color: #333;
-            transform: translateX(5px);
-        }
-
         /* ---------- STEPPER AT TOP (FULL WIDTH) ---------- */
         .stepper-container {
             width: 100%;
@@ -260,18 +237,19 @@
 
         /* Button */
         .register-btn {
-            text-align: center;
-            width: 50%;
-            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* space between buttons */
+            margin: 40px 0; /* vertical spacing only */
         }
 
         .register-btn button {
-            width: 100%;
-            padding: 10px 30px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: .3s ease;
+            width: auto;
+            padding: 10px 25px; /* slightly bigger horizontal padding */
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            white-space: nowrap; /* prevent text from wrapping */
         }
 
         .register-btn button:hover {
@@ -349,10 +327,6 @@
 </head>
 
 <body>
-    <!-- Back To HOME Button -->
-    <a href="brainXdescription.html" class="floating-back-btn">
-        <i class="fas fa-arrow-left me-2"></i> Back to Home
-    </a>
 
     <!-- STEPPER AT TOP -->
     <div class="stepper-container">
@@ -458,9 +432,9 @@
                             <div class="error-message" id="error-food"></div>
                         </div>
 
-                        <div class="register-btn">
-                            <button type="button" id="registerBtn" class="btn btn-primary"
-                                onclick="validateForm()">Submit</button>
+                        <div class="register-btn d-flex justify-content-center gap-3">
+                            <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
+                            <button id="registerBtn" class="btn btn-primary" onclick="validateForm">Submit</button>
                         </div>
                     </form>
                 </div>

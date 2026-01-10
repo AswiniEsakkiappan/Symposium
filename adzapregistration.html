@@ -258,21 +258,23 @@
             font-size: 14px;
         }
 
-        /* Button */
         .register-btn {
-            text-align: center;
-            width: 50%;
-            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* space between buttons */
+            margin: 40px 0; /* vertical spacing only */
         }
 
         .register-btn button {
-            width: 100%;
-            padding: 10px 30px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: .3s ease;
+            width: auto;
+            padding: 10px 25px; /* slightly bigger horizontal padding */
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            white-space: nowrap; /* prevent text from wrapping */
         }
+
+
 
         .register-btn button:hover {
             transform: translateY(-2px);
@@ -349,10 +351,6 @@
 </head>
 
 <body>
-    <!-- Back To HOME Button -->
-    <a href="adzapdescription.html" class="floating-back-btn">
-        <i class="fas fa-arrow-left me-2"></i> Back to Home
-    </a>
     <!-- STEPPER AT TOP -->
     <div class="stepper-container">
         <div class="stepper">
@@ -485,9 +483,10 @@
                             <div class="error-message" id="error-food"></div>
                         </div>
 
-                        <div class="register-btn">
-                            <button type="button" id="registerBtn" class="btn btn-primary"
-                                onclick="validateForm()">Submit</button>
+                        <div class="register-btn d-flex justify-content-center gap-3">
+                            <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
+                            <button id="registerBtn" class="btn btn-primary" onclick="validateForm">Submit</button>
+                        </div>
                         </div>
                     </form>
                 </div>

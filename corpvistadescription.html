@@ -445,10 +445,6 @@ body {
 </head>
 
 <body>
-    <!-- Back To HOME Button -->
-    <a href="index.html" class="floating-back-btn">
-        <i class="fas fa-arrow-left me-2"></i> Back to Home
-    </a>
 
 <div class="sidebar-image-container" id="eventLogo"></div>
 <div class="container">
@@ -503,7 +499,8 @@ body {
                 <li>Rules are subject to change at the discretion of the organizing committee.</li>
             </ul>
             
-            <div class="register-btn">
+            <div class="register-btn d-flex justify-content-center gap-3">
+                <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
                 <button id="registerBtn" class="btn btn-primary">Register Now</button>
             </div>
         </div>

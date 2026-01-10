@@ -38,29 +38,6 @@ body {
     color: white; /* White text for better contrast */
 }
 
-/* Floating Back Button */
-        .floating-back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .floating-back-btn:hover {
-            background: white;
-            color: #333;
-            transform: translateX(5px);
-        }
-
 .container {
     max-width: 75%;
     margin: 0 auto;
@@ -466,10 +443,6 @@ body {
 </head>
 
 <body>
-    <!-- Back To HOME Button -->
-    <a href="index.html" class="floating-back-btn">
-        <i class="fas fa-arrow-left me-2"></i> Back to Home
-    </a>
 <div class="sidebar-image-container" id="eventLogo"></div>
 <div class="container">
     <!-- 1. IMAGE AT TOP - Full Width -->
@@ -520,10 +493,12 @@ body {
                 <li>Each team must submit a video clip with a maximum duration of 5–7 minutes.</li>
                 <li>Use of mobile phones or external electronic devices during the event is strictly prohibited.</li>
             </ul>
-            
-            <div class="register-btn">
+
+            <div class="register-btn d-flex justify-content-center gap-3">
+                <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
                 <button id="registerBtn" class="btn btn-primary">Register Now</button>
             </div>
+
         </div>
     </div>
 </div>

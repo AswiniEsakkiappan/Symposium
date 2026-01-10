@@ -16,6 +16,26 @@
             background: #f4f6f8;
             min-height: 100vh;
         }
+        .floating-back-btn {
+            position: static; /* IMPORTANT */
+            display: inline-block;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .floating-back-btn:hover {
+            background: white;
+            color: #333;
+            transform: translateX(5px);
+        }
 
         /* ---------- NAVBAR (Replaced Sidebar) ---------- */
         .top-navbar {
@@ -311,14 +331,12 @@
 </head>
 
 <body>
-    <a href="index.html" class="floating-back-btn">
-        <i class="fas fa-arrow-left me-2"></i> Back to Home
-    </a>
 
     <div class="wrapper">
 
         <!-- Top Navbar (Replaced Sidebar) -->
         <div class="top-navbar">
+
             <div class="stepper">
                 <div class="step completed">
                     <div class="circle"></div>
@@ -334,6 +352,7 @@
                 </div>
             </div>
         </div>
+            
 
         <div class="content">
             <div class="event-card">
@@ -358,12 +377,15 @@
                     </div>
                 </div>             
 
-                <div class="register-btn">
-                    <button id="registerBtn" class="btn btn-primary">Finish</button>
+                <div class="register-btn d-flex justify-content-center gap-3">
+                    <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
+                    <button id="finishBtn" class="btn btn-primary">Finish</button>
                 </div>
+
 
             </div>
         </div>
+        
 
     </div>
     <script>

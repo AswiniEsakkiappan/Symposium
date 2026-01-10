@@ -333,11 +333,6 @@
 </head>
 
 <body>
-    <!-- Back To HOME Button -->
-    <a href="index.html" class="floating-back-btn">
-        <i class="fas fa-arrow-left me-2"></i> Back to Home
-    </a>
-
     <div class="wrapper">
 
         <!-- Top Navbar (Replaced Sidebar) -->
@@ -381,8 +376,9 @@
                     </div>
                 </div>                
 
-                <div class="register-btn">
-                    <button id="registerBtn" class="btn btn-primary">Finish</button>
+                <div class="register-btn d-flex justify-content-center gap-3">
+                    <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
+                    <button id="finishBtn" class="btn btn-primary">Finish</button>
                 </div>
 
             </div>

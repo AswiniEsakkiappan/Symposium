@@ -17,6 +17,29 @@
             min-height: 100vh;
         }
 
+        /* Floating Back Button */
+        .floating-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .floating-back-btn:hover {
+            background: white;
+            color: #333;
+            transform: translateX(5px);
+        }
+
         /* ---------- NAVBAR (Replaced Sidebar) ---------- */
         .top-navbar {
             background: black;
@@ -298,11 +321,19 @@
                 padding: 12px 36px;
                 font-size: 16px;
             }
+            .mail{
+                color: #0f5132;
+                font-style: italic;
+            }
+            .mail:hover{
+                color:greenyellow;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Back To HOME Button -->
     <a href="index.html" class="floating-back-btn">
         <i class="fas fa-arrow-left me-2"></i> Back to Home
     </a>
@@ -341,6 +372,11 @@
                         <div class="extra-info">
                             Please check your inbox (and spam folder).<br>
                             For any queries, contact the organizers via the event website.
+                        </div>
+                        <div class="email-box" ><br>
+                            <h4>Organizers:</h4>
+                                    <p class="mail">Subha: <a href="mailto: josubha33@gmail.com ">josubha33@gmail.com</a></p>
+                                    <p class="mail"> Charyston: <a href="mailto: Charyston2@gmail.com">Charyston2@gmail.com</a></p>
                         </div>
                     </div>
                 </div>

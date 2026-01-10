@@ -39,29 +39,6 @@
             z-index: -1;
         }
 
-        /* Floating Back Button */
-        .floating-back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .floating-back-btn:hover {
-            background: white;
-            color: #333;
-            transform: translateX(5px);
-        }
-
         /* ---------- STEPPER AT TOP (FULL WIDTH) ---------- */
         .stepper-container {
             width: 100%;
@@ -258,28 +235,20 @@
             font-size: 14px;
         }
 
-        .register-btn {
-            display: flex;
-            justify-content: center;
-            gap: 15px; /* space between buttons */
-            margin: 40px 0; /* vertical spacing only */
-        }
-
-        .register-btn button {
+        .register-btn .btn {
             width: auto;
-            padding: 10px 25px; /* slightly bigger horizontal padding */
+            padding: 10px 25px;
             font-size: 16px;
             font-weight: 600;
             border-radius: 50px;
-            white-space: nowrap; /* prevent text from wrapping */
+            white-space: nowrap;
         }
 
-
-
-        .register-btn button:hover {
+        .register-btn .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 14px rgba(8, 99, 237, 0.4);
         }
+
 
         /* NEW: Validation error styles */
         .error-message {
@@ -484,9 +453,19 @@
                         </div>
 
                         <div class="register-btn d-flex justify-content-center gap-3">
-                            <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
-                            <button id="registerBtn" class="btn btn-primary" onclick="validateForm">Submit</button>
+                            <a href="adzapdescription.html"
+                            class="btn btn-primary">
+                                Back
+                            </a>
+
+                            <button type="button"
+                                    id="submitBtn"
+                                    class="btn btn-primary"
+                                    onclick="return validateForm()">
+                                Submit
+                            </button>
                         </div>
+
                         </div>
                     </form>
                 </div>

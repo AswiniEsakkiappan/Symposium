@@ -17,29 +17,6 @@ body {
     color: white; /* White text for better contrast */
 }
 
-/* Floating Back Button */
-        .floating-back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .floating-back-btn:hover {
-            background: white;
-            color: #333;
-            transform: translateX(5px);
-        }
-
 .container {
     max-width: 75%;
     margin: 0 auto;
@@ -500,7 +477,9 @@ body {
             </ul>
             
             <div class="register-btn d-flex justify-content-center gap-3">
-                <button id="backBtn" class="btn btn-primary" onclick="history.back()">Back</button>
+                <a href="index.html">
+                    <button id="backBtn" class="btn btn-primary"">Back</button>
+                </a>
                 <button id="registerBtn" class="btn btn-primary">Register Now</button>
             </div>
         </div>

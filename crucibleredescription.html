@@ -30,7 +30,7 @@ body {
 .sidebar-image-container {
     width: 100%;
     height: 450px;
-    background: url('bestmanager.jpeg') center/cover no-repeat;
+    background: url('crucible.jpeg') center/cover no-repeat;
     background-color: #222; /* Dark fallback color */
     display: flex;
     align-items: center;
@@ -423,10 +423,9 @@ body {
 
 <body>
 
-<div class="sidebar-image-container" id="eventLogo"></div>
 <div class="container">
     <!-- 1. IMAGE AT TOP - Full Width -->
-    
+    <div class="sidebar-image-container" id="eventLogo"></div>
     
     <!-- 2. STEPPER BELOW IMAGE - SINGLE ROW FOR ALL DEVICES -->
     <div class="stepper-container">
@@ -491,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     img.onload = function() {
         // Image loaded successfully
-        logo.style.backgroundImage = 'url("bestmanager.jpeg")';
+        logo.style.backgroundImage = 'url("crucible.jpeg")';
     };
     
     img.onerror = function() {
@@ -506,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.innerHTML = '<div style="text-align: center; padding: 20px;">The Crucible - Managerial Challenge<br><small style="color: #aaa;">bestmanager.jpeg</small></div>';
     };
     
-    img.src = 'bestmanager.jpeg';
+    img.src = 'crucible.jpeg';
     
     // Register button functionality
     document.getElementById("registerBtn").onclick = function() {

@@ -6,11 +6,9 @@
   <title>Visionary Vibe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Added Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -19,17 +17,40 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+html {
+  scroll-behavior: smooth;
+}
     body {
       font-family: 'Poppins', sans-serif;
       overflow-x: hidden;
       padding-top: 90px;
-      /* Adjusted for small space */
-      
+    }
+
+    /* Video Background */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
     }
 
     .main {
-      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('eve.jpg') center top / cover no-repeat fixed;
-      min-height: 100vh;      
+      position: relative;
+      min-height: 100vh;
+      z-index: 1;
     }
     
     header {
@@ -47,47 +68,53 @@
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 4px solid rgba(255, 230, 0, 0.7);
+      border-bottom: 4px solid #0f65e8;
+      filter: blur(0.45px);
     }
 
     header.scrolled {
       background: rgba(10, 26, 31, 0.95);
       backdrop-filter: blur(20px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      border-bottom: 3px solid #ffeb3b;
+      border-bottom: 3px solid #0f65e8;
+      filter: blur(0.5px);
+    }
+    .headlogo{
+        width:18%;
+        height:16%;
+        object-fit: contain;
     }
     
+    
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+    .logo img{
+        object-fit: contain;
     }
 
-    .college-logo {
-      width: 80px;
-      height: 60px;
-      object-fit: contain;
-    }
-
-    .facepreplogo {
-      width: 180px;
-      height: 70px;
-      object-fit: contain;
-    }
-
-    .logo img {
-      object-fit: contain;
-    }
-
+    
     .logo-text {
-      font-size: 20px;
-      line-height: 2.0;
-      font-weight: 750;
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(90deg,#0f65e8, #2a7fff, #9d4edd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 15px rgba(255, 111, 111, 0.3);
+      letter-spacing: 1px;
     }
 
     .logo-text strong {
-      color: #ffef5b;
-      font-size: 20px;
+      background: linear-gradient(90deg, #1f99c5aa, #2a7fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .nav-desktop {
@@ -106,10 +133,10 @@
     }
 
     .nav-desktop a:hover {
-      background: #ffeb3b;
+      background: #0f65e8;
       color: #000;
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 230, 7, 0.3);
+      box-shadow: 0 5px 15px rgba(16, 122, 193, 0.552);
     }
 
     .menu-toggle {
@@ -158,7 +185,6 @@
       border-left: 3px solid transparent;
     }
 
-    /* FIXED: Changed from fa-phone-alt to fa-phone and fixed rotation */
     .fa-phone {
       display: inline-block;
       transform: rotate(0deg) !important;
@@ -167,33 +193,32 @@
     }
 
     .nav-mobile a.active {
-      background: #ffeb3b;
-      border-left: 4px solid #ffeb3b;
+      background: #0f65e8;
+      border-left: 4px solid #0f65e8;
       font-weight: bold;
     }
 
     .nav-mobile a:hover {
-      background: #ffeb3b;
-      border-left: 3px solid #ffeb3b;
+      background: #0f65e8;
+      border-left: 3px solid #0f65e8;
       padding-left: 25px;
     }
 
     .nav-desktop a.active {
-      background: #ffeb3b;
-      border-left: 4px solid #ffeb3b;
+      background: #0f65e8;
+      border-left: 4px solid #0f65e8;
       font-weight: bold;
       color: black;
     }
 
     .nav-desktop a:hover {
-      background: #ffeb3b;
-      border-left: 3px solid #ffeb3b;
+      background: #0f65e8;
+      border-left: 3px solid #0f65e8;
       padding-left: 25px;
     }
 
     .title-container {
       padding: 25px 20px 30px 20px;
-      /* Added top padding for small space */
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -206,7 +231,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, rgba(255, 235, 59, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(22, 81, 230, 0.232) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -216,23 +241,47 @@
       height: auto;
       margin: 0 auto;
       display: block;
-      filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.3));
+      filter: drop-shadow(0 0 15px rgba(8, 104, 172, 0.621));
       animation: float 3s ease-in-out infinite;
     }
 
     @keyframes float {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-10px);
       }
     }
 
-    .hero {      
+    .motto-container {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: white;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .motto-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #0f65e8;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .motto-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e0e0e0;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #2a7fff;
+    }
+
+    .hero {
       padding: 30px 0 60px 0;
       position: relative;
       min-height: 500px;
@@ -290,14 +339,12 @@
 
     .center-img {
       text-align: center;
-      
     }
 
     .center-img img {
       width: 100%;
       max-width: 400px;
       opacity: 0.9;
-      /* Removed transition property */
     }
 
     .countdown {
@@ -316,7 +363,6 @@
       text-align: center;
       padding: 10px;
       flex: 1;
-      /* Equal width for all boxes */
     }
 
     .countdown h1 {
@@ -352,7 +398,7 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, #ff6f6f, #ffeb3b, #1f4a55);
+      background: #0f65e8
     }
 
     .about h2 {
@@ -380,23 +426,70 @@
       padding: 0 20px;
     }
 
-    footer {
+    .footer {
       background: linear-gradient(135deg, #0f2e35 0%, #000 100%);
       color: white;
-      text-align: center;
-      padding: 25px 14px;
-      font-size: 14px;
+      padding: 15px 20px 10px;
       position: relative;
+      width: 100%;
     }
 
-    footer::before {
+    .footer::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #ff6f6f, #ffeb3b, #1f4a55);
+      background: linear-gradient(90deg, #1659a5, #1062c0, #1777c0);
+    }
+
+    .footer-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .footer-logo-img {
+      width: 80px;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer-logo-text {
+      font-size: 12px;
+      color: #ccc;
+      text-align: center;
+    }
+
+    .footer-divider {
+      height: 60px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-copyright {
+      text-align: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 10px;
     }
 
     @media (max-width: 1100px) {
@@ -421,12 +514,10 @@
       header {
         padding: 10px 20px;
         height: 85px;
-        /* Adjusted for small space */
       }
 
       body {
         padding-top: 85px;
-        /* Adjusted for small space */
       }
 
       .nav-desktop {
@@ -435,6 +526,19 @@
 
       .menu-toggle {
         display: flex;
+      }
+
+      .logo-text {
+        font-size: 22px;
+      }
+
+      .motto-title {
+        font-size: 26px;
+      }
+
+      .motto-text {
+        font-size: 16px;
+        padding: 15px;
       }
 
       .title-img {
@@ -457,23 +561,20 @@
         font-size: 16px;
       }
 
-      .college-logo {
-        width: 70px;
-        height: 50px;
-      }
-
-      .facepreplogo {
-        width: 120px;
-        height: 60px;
-      }
-
-      .logo-text {
-        font-size: 15px;
-      }
-
       .nav-mobile {
         top: 85px;
-        /* Adjusted to match header height */
+      }
+
+      .footer-logo-container {
+        gap: 20px;
+      }
+
+      .footer-logo-img {
+        width: 70px;
+      }
+
+      .footer-divider {
+        height: 50px;
       }
     }
 
@@ -491,29 +592,23 @@
       .countdown {
         display: flex;
         flex-wrap: nowrap;
-        /* Changed from wrap to nowrap for straight line */
         justify-content: space-between;
         gap: 8px;
-        /* Reduced gap for better fit */
       }
 
       .countdown div {
         flex: 1;
         min-width: 0;
-        /* Allow flex items to shrink below content size */
         padding: 5px;
-        /* Reduced padding */
       }
 
       .countdown h1 {
         font-size: 20px;
-        /* Reduced font size for mobile */
         margin-bottom: 2px;
       }
 
       .countdown p {
         font-size: 10px;
-        /* Reduced font size for mobile */
         letter-spacing: 0.5px;
       }
 
@@ -530,52 +625,27 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        gap: 8px;
-      }
-
-      .college-logo {
-        width: 50px;
-        height: 40px;
-        flex-shrink: 0;
-      }
-
-      .facepreplogo {
-        width: 90px;
-        height: 40px;
-        flex-shrink: 0;
-        object-fit: contain;
       }
 
       .logo-text {
-        font-size: 11px;
-        line-height: 1.3;
+        font-size: 18px;
         text-align: center;
         flex: 1;
         margin: 0 5px;
-        padding: 0;
-      }
-
-      .logo-text strong {
-        color: #ffef5b;
-        font-size: 14px;
-        display: block;
       }
 
       header {
         height: 85px;
-        /* Consistent height */
         min-height: 85px;
         padding: 10px 15px;
       }
 
       body {
         padding-top: 85px;
-        /* Consistent padding */
       }
 
       .nav-mobile {
         top: 85px;
-        /* Adjusted to match header height */
       }
 
       .menu-toggle {
@@ -587,25 +657,41 @@
 
       .title-container {
         padding: 20px 20px 25px 20px;
-        /* Adjusted for small space */
       }
 
-      /* Ensure fixed background works on mobile */
-      .hero {
-        background-attachment: scroll;
-        /* Fixed background can be problematic on mobile */
+      .motto-container {
+        padding: 30px 15px 15px;
       }
 
-      /* Fallback for mobile devices that don't support fixed background well */
-      @supports (-webkit-touch-callout: none) {
-        .hero {
-          background-attachment: fixed;
-        }
+      .motto-title {
+        font-size: 22px;
+      }
+
+      .motto-text {
+        font-size: 14px;
+        padding: 12px;
+      }
+
+      .footer-logo-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-divider {
+        height: 2px;
+        width: 80%;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .footer-logo-img {
+        width: 60px;
+      }
+
+      .footer-copyright {
+        font-size: 11px;
       }
     }
 
-
-    /* OVERLAY */
     .overlay {
       position: relative;
       min-height: 100vh;
@@ -613,7 +699,6 @@
       overflow: hidden;
     }
 
-    /* HEADER */
     .event h1 {
       color: #fff;
       letter-spacing: 2px;
@@ -623,7 +708,6 @@
       color: #eee;
     }
 
-    /* COUNTDOWN */
     .countdown-container {
       max-width: 750px;
       margin: 0 auto 2rem;
@@ -656,7 +740,6 @@
       margin-top: 6px;
     }
 
-    /* CARDS */
     .gallery-img {
       height: 220px;
       object-fit: cover;
@@ -668,18 +751,6 @@
       background: rgba(255, 255, 255, 0.97);
       animation: float 6s ease-in-out infinite;
       transition: transform .4s ease, box-shadow .4s ease;
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
     }
 
     .card:hover {
@@ -703,7 +774,6 @@
       padding: 6px 22px;
     }
 
-    /* RESPONSIVE */
     @media(max-width:768px) {
       .countdown-box span {
         font-size: 1.5rem;
@@ -717,30 +787,6 @@
       --glass-border: rgba(255, 255, 255, 0.4);
     }
 
-    /* Floating Back Button */
-    .floating-back-btn {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .floating-back-btn:hover {
-      background: white;
-      color: #333;
-      transform: translateX(5px);
-    }
-
-    /* Section Headers */
     .section-header {
       background: rgba(255, 255, 255, 0.9);
       padding: 30px;
@@ -757,7 +803,6 @@
       color: #222;
     }
 
-    /* Glassmorphism Card Style */
     .glass-card {
       background: var(--glass-bg);
       backdrop-filter: blur(12px);
@@ -776,7 +821,6 @@
       background: rgba(255, 255, 255, 0.95);
     }
 
-    /* Carousel Images */
     .carousel-item {
       height: 250px;
       overflow: hidden;
@@ -806,7 +850,6 @@
       display: inline-block;
     }
 
-    /* Underline animation for titles */
     .card-title::after {
       content: '';
       position: absolute;
@@ -827,7 +870,6 @@
       line-height: 1.6;
     }
 
-    /* Batch Badge */
     .batch-badge {
       display: inline-block;
       background: var(--primary-color);
@@ -839,7 +881,6 @@
       font-weight: 500;
     }
 
-    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
     }
@@ -860,19 +901,23 @@
 </head>
 
 <body>
+  <!-- Video Background -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="logo vid.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
 
   <header>
-    <div class="logo">
-      <img src="kamarj logo.png" alt="Kamaraj College" class="college-logo">
-      <img src="facelogo.png" alt="FACE Prep" class="facepreplogo">
+    <div class="logo"  id="goHome" >
       <div class="logo-text">
-        <strong>Visionary vibes </strong>
-        <strong>2026</strong>
-      </div>
+    
+  <img src="visivibelogo-removebg-preview.png" class="headlogo" alt="Visionary Vibes Logo">
+  <span class="logo-text">Visionary Vibes</span>
+</div>
     </div>
 
     <div class="nav-desktop">
-      <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#home"><i class="fas fa-home"></i> Home</a>
       <a href="#events"><i class="fas fa-calendar-alt"></i> Event</a>
       <a href="#gallerys"><i class="fas fa-images"></i> Gallery</a>
       <a href="contactpage.html"><i class="fas fa-phone"></i> Contact</a>
@@ -886,100 +931,91 @@
   </header>
 
   <div class="nav-mobile" id="navMobile">
-    <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="#home" ><i class="fas fa-home"></i> Home</a>
     <a href="#events"><i class="fas fa-calendar-alt"></i> Event</a>
     <a href="#gallerys"><i class="fas fa-images"></i> Gallery</a>
     <a href="contactpage.html"><i class="fas fa-phone"></i> Contact</a>
   </div>
 
-  <div class="main">
+  <div class="main"id="home">
     <section class="hero">
-    <div class="title-container">
-      <img src="visi.jpeg" alt="Visionary Vibe" class="title-img">
-    </div>
-
-
-    <div class="hero-container">
-
-      <div class="reminder">
-        <h2><i class="fas fa-bell"></i> Important Reminder</h2>
-        <p>Mark your calendars! The much-awaited Visionary Vibe event is scheduled for <strong>23 January 2026</strong>.
-          Join us for a day of innovation, learning, and networking with industry experts.</p>
+      <div class="title-container">
+        <img src="visi.jpeg" alt="Visionary Vibe" class="title-img">
       </div>
 
-      <div class="center-img">
-        <!-- <img src="visivibelogo-removebg-preview.png" alt="Phoenix Rising"> -->
-        <video src="./bg.mp4" width="475" height="250" autoplay muted loop playsinline></video>
+      <div class="motto-container">
+        <h2 class="motto-title">Where Ideas Collide & Creativity Ignites</h2>
+        <p class="motto-text">
+          VISIONARY VIBES is where ideas collide, skills ignite, and creativity goes full beast mode.
+          With 10 power-packed technical and non-technical events, it's a playground for thinkers, builders, and rule-breakers alike.
+        </p>
       </div>
 
-      <div class="countdown">
-        <div>
-          <h1 id="days">00</h1>
-          <p>DAYS</p>
+      <div class="hero-container">
+        <div class="reminder">
+          <h2><i class="fas fa-bell"></i> Important Reminder</h2>
+          <p>Mark your calendars! The much-awaited Visionary Vibe event is scheduled for <strong>23 January 2026</strong>.
+            Join us for a day of innovation, learning, and networking with industry experts.</p>
         </div>
-        <div>
-          <h1 id="hours">00</h1>
-          <p>HOURS</p>
+
+        <div class="center-img">
+          <img src="visivibelogo-removebg-preview.png" width="475" height="250" >
         </div>
-        <div>
-          <h1 id="minutes">00</h1>
-          <p>MINUTES</p>
-        </div>
-        <div>
-          <h1 id="seconds">00</h1>
-          <p>SECONDS</p>
+
+        <div class="countdown">
+          <div>
+            <h1 id="days">00</h1>
+            <p>DAYS</p>
+          </div>
+          <div>
+            <h1 id="hours">00</h1>
+            <p>HOURS</p>
+          </div>
+          <div>
+            <h1 id="minutes">00</h1>
+            <p>MINUTES</p>
+          </div>
+          <div>
+            <h1 id="seconds">00</h1>
+            <p>SECONDS</p>
+          </div>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <section class="about">
-    <h2>VISIONARY VIBES</h2>
-    <p>
-      VISIONARY VIBES is where ideas collide, skills ignite, and creativity goes full beast mode.
-      With 10 power-packed technical and non-technical events, it’s a playground for thinkers, builders, and rule-breakers alike.
-    </p>
-    <br>
-    <br>
     </section>
 
-  <section class="about">
-    <h2>About FACEPrep Campus</h2>
-    <span>Dream • Define • Do</span>
-    <p>
-      FACE Prep is a leading placement-focused training company that empowers students
-      with industry-relevant skills, aptitude training, and real-world exposure.
-      Through structured learning paths, certifications, and mentorship,
-      FACE Prep Campus bridges the gap between education and employability.
-      We are committed to transforming students into industry-ready professionals.
-    </p>
-  </section>
+    <section class="about">
+      <h2>About FACEPrep Campus</h2>
+      <span>Dream • Define • Do</span>
+      <p>
+        FACE Prep is a leading placement-focused training company that empowers students
+        with industry-relevant skills, aptitude training, and real-world exposure.
+        Through structured learning paths, certifications, and mentorship,
+        FACE Prep Campus bridges the gap between education and employability.
+        We are committed to transforming students into industry-ready professionals.
+      </p>
+    </section>
 
-  <div class="overlay" id="events">
-    <div class="container">
+    <div class="overlay" id="events">
+      <div class="container">
+        <div class="text-center mb-4 event">
+          <h1 class="display-4 fw-bold">EVENT PAGE</h1>
+          <p class="lead">Explore • Compete • Celebrate Innovation</p>
+        </div>
 
-      <!-- HEADER -->
-      <div class="text-center mb-4 event">
-        <h1 class="display-4 fw-bold">EVENT PAGE</h1>
-        <p class="lead">Explore • Compete • Celebrate Innovation</p>
-      </div>
+        <div class="countdown-container">
+          <div class="countdown-box"><span id="days2">00</span><small>DAYS</small></div>
+          <div class="countdown-box"><span id="hours2">00</span><small>HOURS</small></div>
+          <div class="countdown-box"><span id="minutes2">00</span><small>MINUTES</small></div>
+          <div class="countdown-box"><span id="seconds2">00</span><small>SECONDS</small></div>
+        </div>
 
-      <!-- COUNTDOWN -->
-      <div class="countdown-container">
-        <div class="countdown-box"><span id="days2">00</span><small>DAYS</small></div>
-        <div class="countdown-box"><span id="hours2">00</span><small>HOURS</small></div>
-        <div class="countdown-box"><span id="minutes2">00</span><small>MINUTES</small></div>
-        <div class="countdown-box"><span id="seconds2">00</span><small>SECONDS</small></div>
-      </div>
-
-      <!-- EVENTS -->
+        <!-- EVENTS -->
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
         <!-- 1 BUG BLITZ -->
         <div class="col">
           <div class="card h-100">
-            <img src="debuglogo.jpeg" class="gallery-img">
+            <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/debuglogo.jpeg" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">BUG BLITZ</h5>
               <p class="text-muted">Where Error Meets Expertise</p>
@@ -992,7 +1028,7 @@
         <!-- 2 BRAINX -->
         <div class="col">
           <div class="card h-100">
-            <img src="Quiz logo.jpeg" class="gallery-img">
+            <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Quiz logo.jpeg" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">BRAINX</h5>
               <p class="text-muted">Neural Knockout</p>
@@ -1005,7 +1041,7 @@
         <!-- 3 VISION VAULT -->
         <div class="col">
           <div class="card h-100">
-            <img src="Vision vault.jpeg" class="gallery-img">
+            <img src="vision vault.jpeg" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">Vision Vault</h5>
               <p class="text-muted">Research Meets Reality</p>
@@ -1031,7 +1067,7 @@
         <!-- 5 MAKEIT WEB -->
         <div class="col">
           <div class="card h-100">
-            <img src="makeitweblogo.jpeg" class="gallery-img">
+            <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/makeitweblogo.jpeg" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">MAKEIT Web</h5>
               <p class="text-muted">Web Designing</p>
@@ -1070,7 +1106,7 @@
         <!-- 8 THINK THRUST -->
         <div class="col">
           <div class="card h-100">
-            <img src="thinkthrustlogo.jpg" class="gallery-img">
+            <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/thinkthrustlogo.jpg" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">Think Thrust</h5>
               <p class="text-muted">Aptitude</p>
@@ -1083,7 +1119,7 @@
         <!-- 9 CORP VISTA -->
         <div class="col">
           <div class="card h-100">
-            <img src="cropvista.jpeg" class="gallery-img">
+            <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/cropvista.jpeg" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">Corp Vista</h5>
               <p class="text-muted">Corporate Walk</p>
@@ -1096,7 +1132,7 @@
         <!-- 10 FINOVA -->
         <div class="col">
           <div class="card h-100">
-            <img src="finova.png" class="gallery-img">
+            <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/finova.png" class="gallery-img">
             <div class="card-body">
               <h5 class="fw-bold">Finova</h5>
               <p class="text-muted">Advanced Finance</p>
@@ -1109,7 +1145,6 @@
       </div>
     </div>
   </div>
-
   <div class="container py-5" id="gallerys">
     <div class="text-center mb-5">
       <h1 class="display-5 section-title text-white">Gallery</h1>
@@ -1457,7 +1492,7 @@
     </section>
 
     <section class="mb-5" data-aos="fade-up" data-aos-duration="1000">
-      <div class="section-header text-center">
+      <div class="section-header text-center"> 
         <h1 class="display-5 section-title">BCA-A,B BATCH <span class="text-primary">2025-2028</span></h1>
         <p class="lead text-secondary mt-3">
           <i class="fas fa-microchip me-2"></i>
@@ -1619,21 +1654,7 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <section class="mb-5" data-aos="fade-up" data-aos-duration="1000">
-      <div class="section-header text-center">
-        <h1 class="display-5 section-title">I B.Sc with AI <span class="text-primary">2025-2028</span></h1>
-        <p class="lead text-secondary mt-3">
-          <i class="fas fa-university me-2"></i>
-          Empowering students with financial knowledge and strong computing foundations.
-        </p>
-      </div>
-
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-        <div class="col" data-aos="fade-up" data-aos-delay="100">
+         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="card glass-card h-100 border-0">
             <div id="carouselBCom1" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -1662,35 +1683,12 @@
           </div>
         </div>
 
-        <div class="col" data-aos="fade-up" data-aos-delay="200">
-          <div class="card glass-card h-100 border-0">
-            <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/IMG_3386.JPG"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Monica S.jpg"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Villaswathi P.jpg"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Meera Raliya M I.jpg"
-                    class="d-block w-100"></div>
-                <div class="carousel-item" data-bs-interval="2400"><img
-                    src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Supriya S.jpg"
-                    class="d-block w-100"></div>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="batch-badge">Science</span>
-              <h5 class="card-title">I B.Sc CS with AI</h5>
-              <p class="card-text text-muted">An innovative event where applications are created without writing a
-                single line of code!</p>
-            </div>
-          </div>
-        </div>
+
+      </div>
+    </section>
+
+    
+        
 
       </div>
     </section>
@@ -1737,17 +1735,112 @@
                         <div class="card-body">
                             <span class="batch-badge">Students event</span>
                             <h5 class="card-title">I Bsc Cs with AI</h5>
-                            <p class="card-text text-muted">Where B.Com students turn bold ideas into business proposals!</p>
                         </div>
                     </div>
                 </div>
+            
+        </section>
+  </div>
+    <footer class="footer">
+      <div class="footer-logo-container">
+        <div class="footer-logo">
+           <a href="https://www.instagram.com/fpc_at_kamarajcollege/?__pwa=1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="FACE Prep Website">
+          <img src="kamarj logo.png" alt="Kamaraj College" class="footer-logo-img">
+           </a>
+          
+          <div class="footer-logo-text">FPC @ Kamaraj College</div>
+          </a>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-logo">
+            <a href="https://www.instagram.com/faceprep_campus/?__pwa=1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="FACE Prep Website">
+          <img src="facelogo.png" alt="FACE Prep" class="footer-logo-img"></a>
+          <div class="footer-logo-text">FACE Prep Campus</div>
+        </div>
+       
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Visionary Vibes. All rights reserved.</p>
+        <p>Organized by Kamaraj College & FACE Prep Campus</p>
+      </div>
+    </footer>
+  </div>
 
-                <div class="col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card glass-card h-100 border-0">
-                        <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf1.jpeg" class="d-block w-100"></div>
-                                <div class="carousel-item" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf2.jpeg" class="d-block w-100"></div>
-                                <div class="carousel-item" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf3.jpeg" class="d-block w-100"></div>
-                            </div>
-                        </div>
+  <script>
+    function updateCountdown() {
+      const eventDate = new Date('January 23, 2026 09:00:00').getTime();
+      const now = new Date().getTime();
+      const timeLeft = eventDate - now;
+
+      if (timeLeft < 0) {
+        document.getElementById('days').innerHTML = "00";
+        document.getElementById('hours').innerHTML = "00";
+        document.getElementById('minutes').innerHTML = "00";
+        document.getElementById('seconds').innerHTML = "00";
+        
+        document.getElementById('days2').innerHTML = "00";
+        document.getElementById('hours2').innerHTML = "00";
+        document.getElementById('minutes2').innerHTML = "00";
+        document.getElementById('seconds2').innerHTML = "00";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+
+      document.getElementById('days2').innerHTML = days.toString().padStart(2, '0');
+      document.getElementById('hours2').innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById('minutes2').innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds2').innerHTML = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMobile').classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-mobile a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('navMobile').classList.remove('active');
+      });
+    });
+     document.getElementById("goHome").addEventListener("click", () => {
+    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+  });
+
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

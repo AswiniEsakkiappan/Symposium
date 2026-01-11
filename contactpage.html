@@ -26,7 +26,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ---------- BACK BUTTON (MATCHES FIRST PAGE EXACTLY) ---------- */
+/* ---------- BACK BUTTON ---------- */
 .floating-back-btn {
     position: fixed;
     top: 20px;
@@ -103,8 +103,6 @@ textarea::placeholder {
 .form-control:focus,
 .form-select:focus,
 textarea:focus {
-    background: #ffffff;
-    color: #000;
     outline: none;
     box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.4);
 }
@@ -115,15 +113,6 @@ textarea:focus {
     font-weight: 600;
     font-size: 13px;
     padding: 6px 18px;
-    background: #0d6efd;
-    color: #fff;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: #0b5ed7;
-    color: #fff;
 }
 
 /* ---------- EMAIL LINK ---------- */
@@ -145,70 +134,109 @@ hr {
 <body>
 
 <!-- BACK BUTTON -->
-<a href="index.html" class="floating-back-btn">
-    Back to Home
-</a>
+<a href="index.html" class="floating-back-btn">Back to Home</a>
 
 <div class="container py-5">
 
-    <header class="text-center mb-4">
-        <h1 class="page-title">CONTACT US</h1>
-        <p class="lead subtitle">
-            For all event-related queries, please reach out using the form below
-        </p>
-    </header>
+<header class="text-center mb-4">
+    <h1 class="page-title">CONTACT US</h1>
+    <p class="lead subtitle">
+        For all event-related queries, please reach out using the form below
+    </p>
+</header>
 
-    <div class="card contact-card">
-        <div class="card-body p-4">
+<div class="card contact-card">
+<div class="card-body p-4">
 
-            <form>
-                <div class="mb-3">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control" placeholder="Enter your name" required>
-                </div>
+<form id="contactForm">
 
-                <div class="mb-3">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" class="form-control" placeholder="Enter your email" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Subject</label>
-                    <select class="form-select">
-                        <option selected disabled>Select a topic</option>
-                        <option>Registration Query</option>
-                        <option>Event Rules</option>
-                        <option>Technical Support</option>
-                        <option>General Query</option>
-                    </select>
-                </div>
-
-                <div class="mb-4">
-                    <label class="form-label">Message</label>
-                    <textarea class="form-control" rows="4" placeholder="Type your message here..." required></textarea>
-                </div>
-
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-sm">
-                        Send Message
-                    </button>
-                </div>
-            </form>
-
-            <hr class="my-4">
-
-            <p class="text-center mb-1">Or email us directly at</p>
-            <p class="text-center fw-semibold email-link">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=visionaryvibes2026@gmail.com" target="_blank">
-                    visionaryvibes2026@gmail.com
-                </a>
-            </p>
-
-        </div>
+    <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name" required>
     </div>
 
+    <div class="mb-3">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Subject</label>
+        <select class="form-select" required>
+            <option selected disabled>Select a topic</option>
+            <option>Registration Query</option>
+            <option>Event Rules</option>
+            <option>Technical Support</option>
+            <option>General Query</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" rows="4" placeholder="Type your message here..." required></textarea>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-sm">
+            Send Message
+        </button>
+    </div>
+
+</form>
+
+<hr class="my-4">
+
+<p class="text-center mb-1">Or email us directly at</p>
+<p class="text-center fw-semibold email-link">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=visionaryvibes2026@gmail.com" target="_blank">
+        visionaryvibes2026@gmail.com
+    </a>
+</p>
+
+</div>
+</div>
 </div>
 
+<!-- SUCCESS POPUP MODAL -->
+<div class="modal fade" id="successModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content text-dark">
+
+<div class="modal-header">
+    <h5 class="modal-title">Message Sent Successfully</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+    Thank you for reaching out. Our team will contact you shortly.
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">
+        OK
+    </button>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- FORM SUBMIT SCRIPT -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // stop reload
+
+    const successModal = new bootstrap.Modal(
+        document.getElementById("successModal")
+    );
+    successModal.show();
+
+    this.reset(); // clear form
+});
+</script>
+
 </body>
 </html>

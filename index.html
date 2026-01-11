@@ -12,17 +12,17 @@
 
   <style>
     :root {
-      --primary: #007AFF;         /* Electric Cobalt */
+      --primary: #007AFF;
       --primary-glow: rgba(0, 122, 255, 0.5);
-      --secondary: #6B21A8;      /* Purple for accents */
-      --bg-dark: #020617;        /* Obsidian Midnight */
-      --surface: rgba(15, 23, 42, 0.7); /* Glass Slate */
+      --secondary: #6B21A8;
+      --bg-dark: #020617;
+      --surface: rgba(15, 23, 42, 0.7);
       --glass-border: rgba(255, 255, 255, 0.1);
       --text-main: #f8fafc;
       --text-dim: #94a3b8;
-      --success: #10B981;        /* Emerald for success states */
-      --warning: #F59E0B;        /* Amber for warnings */
-      --danger: #EF4444;         /* Red for errors */
+      --success: #10B981;
+      --warning: #F59E0B;
+      --danger: #EF4444;
     }
 
     * {
@@ -42,7 +42,6 @@
       padding-top: 100px;
     }
 
-    /* Background Video & Overlays */
     #bg-video {
       position: fixed;
       top: 0;
@@ -64,7 +63,6 @@
       z-index: -1;
     }
 
-    /* Floating Glass Header */
     header {
       position: fixed;
       top: 20px;
@@ -85,6 +83,7 @@
       border-radius: 100px;
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
 
     header.scrolled {
@@ -103,6 +102,7 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      pointer-events: auto;
     }
 
     .logo img {
@@ -126,6 +126,7 @@
     .nav-desktop {
       display: flex;
       gap: 5px;
+      pointer-events: auto;
     }
 
     .nav-desktop a {
@@ -152,7 +153,6 @@
       box-shadow: 0 4px 15px var(--primary-glow);
     }
 
-    /* Mobile Menu Toggle */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -160,6 +160,7 @@
       width: 30px;
       height: 25px;
       justify-content: space-between;
+      pointer-events: auto;
     }
 
     .menu-toggle span {
@@ -170,7 +171,6 @@
       transition: 0.3s;
     }
 
-    /* Mobile Navigation */
     .nav-mobile {
       display: none;
       position: fixed;
@@ -215,22 +215,20 @@
       border-left: 4px solid #fff;
     }
 
-    /* Main Content */
     main {
       position: relative;
       z-index: 1;
     }
 
-    /* Hero Section */
     .hero {
-      padding: 160px 0 60px;
+      padding: 60px 0 40px;
       text-align: center;
     }
 
     .hero-img {
       max-width: 550px;
       width: 85%;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       filter: drop-shadow(0 0 30px var(--primary-glow));
       animation: float 4s ease-in-out infinite;
     }
@@ -247,7 +245,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -256,16 +254,15 @@
       font-size: 18px;
       color: var(--text-dim);
       max-width: 800px;
-      margin: 0 auto 40px;
+      margin: 0 auto 30px;
       line-height: 1.6;
     }
 
-    /* Countdown Grid */
     .countdown-grid {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin: 40px auto;
+      margin: 30px auto;
       flex-wrap: wrap;
     }
 
@@ -302,13 +299,12 @@
       letter-spacing: 1px;
     }
 
-    /* Reminder Section */
     .reminder-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 30px;
       max-width: 1200px;
-      margin: 60px auto;
+      margin: 40px auto;
       align-items: center;
     }
 
@@ -385,7 +381,6 @@
       letter-spacing: 1px;
     }
 
-    /* About Section */
     .about-box {
       background: var(--surface);
       border: 1px solid var(--glass-border);
@@ -419,7 +414,6 @@
       font-size: 17px;
     }
 
-    /* Event Cards */
     .event-section {
       padding: 80px 0;
     }
@@ -515,7 +509,6 @@
       transform: translateY(-2px);
     }
 
-    /* Gallery Section */
     .gallery-section {
       padding: 80px 0;
     }
@@ -556,7 +549,6 @@
       line-height: 1.6;
     }
 
-    /* Glass Cards for Gallery */
     .glass-card {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
@@ -620,20 +612,19 @@
       color: var(--text-dim);
     }
 
-    /* Footer */
     footer {
       background: rgba(15, 23, 42, 0.8);
       border-top: 1px solid var(--glass-border);
-      padding: 40px 0 20px;
-      margin-top: 60px;
+      padding: 25px 0 15px;
+      margin-top: 40px;
     }
 
     .footer-logos {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 40px;
-      margin-bottom: 30px;
+      gap: 30px;
+      margin-bottom: 20px;
       flex-wrap: wrap;
     }
 
@@ -641,12 +632,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       text-decoration: none;
+      width: 160px;
     }
 
     .footer-logo-img {
-      width: 100px;
+      width: 70px;
       height: auto;
       transition: transform 0.3s;
       filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
@@ -658,25 +650,26 @@
 
     .footer-logo-text {
       color: var(--text-dim);
-      font-size: 14px;
+      font-size: 12px;
       text-align: center;
+      line-height: 1.3;
     }
 
     .footer-divider {
-      height: 60px;
+      height: 40px;
       width: 1px;
       background: var(--glass-border);
     }
 
     .footer-copyright {
       text-align: center;
-      padding-top: 20px;
+      padding-top: 15px;
       border-top: 1px solid var(--glass-border);
       color: var(--text-dim);
-      font-size: 14px;
+      font-size: 13px;
+      line-height: 1.4;
     }
 
-    /* Responsive Design */
     @media (max-width: 1100px) {
       .reminder-container {
         grid-template-columns: 1fr;
@@ -717,7 +710,7 @@
       }
       
       .hero {
-        padding: 120px 0 40px;
+        padding: 60px 0 30px;
       }
       
       .motto-title {
@@ -753,6 +746,27 @@
       .nav-mobile {
         top: 85px;
       }
+      
+      .footer-logos {
+        gap: 15px;
+        flex-direction: row;
+        justify-content: center;
+      }
+      
+      .footer-logo {
+        width: 100px;
+      }
+      
+      .footer-logo-img {
+        width: 40px;
+      }
+      
+      .footer-divider {
+        height: 30px;
+      }
+      .footer-logo-text{
+        font-size: 10px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -774,21 +788,33 @@
       }
       
       .footer-logos {
-        flex-direction: column;
-        gap: 30px;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+        
+      }
+      
+      .footer-logo {
+        width: 90px;
+      }
+      
+      .footer-logo-img {
+        width: 35px;
+      }
+      
+      .footer-logo-text {
+        font-size: 9px;
       }
       
       .footer-divider {
-        height: 1px;
-        width: 80%;
+        display: none;
       }
-      
-      .logo img {
-        height: 35px;
+      .logo img{
+        height: 20px;
       }
     }
 
-    /* Custom Scrollbar */
+
     ::-webkit-scrollbar {
       width: 10px;
     }
@@ -809,20 +835,18 @@
 </head>
 
 <body>
-  <!-- Video Background -->
   <video id="bg-video" autoplay muted loop playsinline>
     <source src="logo vid.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="video-overlay"></div>
 
-  <!-- Header -->
-   <header id="header">
-  <div class="header-home-area" id="headerHomeArea">
-        <a href="#home" class="logo" id="goHome">
-            <img src="visivibelogo-removebg-preview.png" alt="Visionary Vibes Logo">
-            <div class="logo-text">Visionary<span>Vibes</span></div>
-        </a>
+  <header id="header">
+    <div class="header-home-area" id="headerHomeArea">
+      <a href="#home" class="logo" id="goHome">
+        <img src="visivibelogo-removebg-preview.png" alt="Visionary Vibes Logo">
+        <div class="logo-text">Visionary<span>Vibes</span></div>
+      </a>
     </div>
 
     <nav class="nav-desktop">
@@ -839,7 +863,6 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation -->
   <nav class="nav-mobile" id="navMobile">
     <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
     <a href="#events"><i class="fas fa-calendar-alt"></i> Events</a>
@@ -847,38 +870,16 @@
     <a href="contactpage.html"><i class="fas fa-phone"></i> Contact Us</a>
   </nav>
 
-  <!-- Main Content -->
   <main class="container">
-    <!-- Hero Section -->
     <section class="hero" id="home" data-aos="fade-up">
-      <img src="visi.jpeg" alt="Visionary Vibe" class="hero-img">
+      <img src="visii.png" alt="Visionary Vibe" class="hero-img">
       <h1 class="motto-title">Where Ideas Collide & Creativity Ignites</h1>
       <p class="hero-text">
         VISIONARY VIBES is where ideas collide, skills ignite, and creativity goes full beast mode.
         With 10 power-packed technical and non-technical events, it's a playground for thinkers, builders, and rule-breakers alike.
       </p>
-
-      <div class="countdown-grid">
-        <div class="countdown-item">
-          <h2 id="days">00</h2>
-          <p>Days</p>
-        </div>
-        <div class="countdown-item">
-          <h2 id="hours">00</h2>
-          <p>Hours</p>
-        </div>
-        <div class="countdown-item">
-          <h2 id="minutes">00</h2>
-          <p>Minutes</p>
-        </div>
-        <div class="countdown-item">
-          <h2 id="seconds">00</h2>
-          <p>Seconds</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Reminder Section -->
     <div class="reminder-container" data-aos="fade-up">
       <div class="reminder-box">
         <h3 class="reminder-title"><i class="fas fa-bell"></i> Important Reminder</h3>
@@ -909,7 +910,6 @@
       </div>
     </div>
 
-    <!-- About Section -->
     <section class="about-box" data-aos="fade-up">
       <h2>About FACEPrep Campus</h2>
       <p class="tagline">Dream • Define • Do</p>
@@ -922,7 +922,6 @@
       </p>
     </section>
 
-    <!-- Events Section -->
     <section id="events" class="event-section">
       <div class="section-title" data-aos="fade-up">
         <h2>Power Events</h2>
@@ -930,7 +929,6 @@
       </div>
 
       <div class="row g-4">
-        <!-- Event 1: BUG BLITZ -->
         <div class="col-md-4" data-aos="zoom-in">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/debuglogo.jpeg" class="event-img" alt="Bug Blitz">
@@ -943,7 +941,6 @@
           </div>
         </div>
 
-        <!-- Event 2: BRAINX -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Quiz logo.jpeg" class="event-img" alt="BrainX">
@@ -956,7 +953,6 @@
           </div>
         </div>
 
-        <!-- Event 3: VISION VAULT -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="event-card">
             <img src="vision vault.jpeg" class="event-img" alt="Vision Vault">
@@ -969,7 +965,6 @@
           </div>
         </div>
 
-        <!-- Event 4: THE CRUCIBLE -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="event-card">
             <img src="crucible.jpeg" class="event-img" alt="The Crucible">
@@ -982,7 +977,6 @@
           </div>
         </div>
 
-        <!-- Event 5: MAKEIT WEB -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/makeitweblogo.jpeg" class="event-img" alt="MAKEIT Web">
@@ -995,7 +989,6 @@
           </div>
         </div>
 
-        <!-- Event 6: READY SET HOST -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="event-card">
             <img src="anchoringimg.jpg" class="event-img" alt="Ready Set Host">
@@ -1008,7 +1001,6 @@
           </div>
         </div>
 
-        <!-- Event 7: FLYER NOVA -->
         <div class="col-md-4" data-aos="zoom-in">
           <div class="event-card">
             <img src="ADZAPphoto.jpg" class="event-img" alt="Flyer Nova">
@@ -1021,7 +1013,6 @@
           </div>
         </div>
 
-        <!-- Event 8: THINK THRUST -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/thinkthrustlogo.jpg" class="event-img" alt="Think Thrust">
@@ -1034,7 +1025,6 @@
           </div>
         </div>
 
-        <!-- Event 9: CORP VISTA -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/cropvista.jpeg" class="event-img" alt="Corp Vista">
@@ -1047,7 +1037,6 @@
           </div>
         </div>
 
-        <!-- Event 10: FINOVA -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/finova.png" class="event-img" alt="Finova">
@@ -1062,7 +1051,6 @@
       </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallerys" class="gallery-section">
       <div class="gallery-header" data-aos="fade-down">
         <h1>Gallery</h1>
@@ -1070,9 +1058,7 @@
         <p>Showcasing the academic spirit of Kamaraj College x FACE Prep Campus. Rooted in excellence and innovation.</p>
       </div>
 
-      <!-- BCA Batch Gallery Cards -->
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-        <!-- BCA Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1108,7 +1094,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1135,7 +1120,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 3 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCA3" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1171,7 +1155,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 4 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA4" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1201,7 +1184,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 5 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA5" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1234,7 +1216,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 6 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCA6" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1267,7 +1248,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 7 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA7" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1303,7 +1283,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 8 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA8" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1327,7 +1306,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 9 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCA9" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1354,7 +1332,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 10 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA10" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1384,7 +1361,6 @@
           </div>
         </div>
 
-        <!-- BCA Card 11 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA11" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1415,14 +1391,12 @@
         </div>
       </div>
 
-      <!-- BCA-A,B Batch 2025-2028 Section -->
       <div class="gallery-header mt-5" data-aos="fade-down">
         <div class="batch-badge">BCA-A,B BATCH 2025-2028</div>
         <p>A place to explore knowledge and skills - learn, innovate and shape our future!</p>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-        <!-- BCA New Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCAnew1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1452,7 +1426,6 @@
           </div>
         </div>
 
-        <!-- BCA New Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCAnew2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1482,7 +1455,6 @@
           </div>
         </div>
 
-        <!-- BCA New Card 3 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCAnew3" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1513,14 +1485,12 @@
         </div>
       </div>
 
-      <!-- BBA Batch 2025-2028 Section -->
       <div class="gallery-header mt-5" data-aos="fade-down">
         <div class="batch-badge">BBA BATCH 2025-2028</div>
         <p>Nurturing leadership, entrepreneurship, and ethical business practices.</p>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-        <!-- BBA Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBBA1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1544,7 +1514,6 @@
           </div>
         </div>
 
-        <!-- BBA Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBBA2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1571,7 +1540,6 @@
           </div>
         </div>
 
-        <!-- B.Com Card -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCom1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1602,14 +1570,12 @@
         </div>
       </div>
 
-      <!-- BSc CS with AI Section -->
       <div class="gallery-header mt-5" data-aos="fade-down">
         <div class="batch-badge">BSc CS with AI 2025-2028</div>
         <p>Empowering students with financial knowledge and strong computing foundations.</p>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <!-- BSc Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1633,7 +1599,6 @@
           </div>
         </div>
 
-        <!-- BSc Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBSc2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1669,7 +1634,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-logos">
       <a href="https://www.instagram.com/fpc_at_kamarajcollege/?__pwa=1" target="_blank" rel="noopener noreferrer" class="footer-logo">
@@ -1680,8 +1644,15 @@
       <div class="footer-divider"></div>
       
       <a href="https://www.instagram.com/faceprep_campus/?__pwa=1" target="_blank" rel="noopener noreferrer" class="footer-logo">
-        <img src="facelogo.png" alt="FACE Prep" class="footer-logo-img">
+        <img src="facelogo.png" alt="FACE Prep Campus" class="footer-logo-img">
         <div class="footer-logo-text">FACE Prep Campus</div>
+      </a>
+
+      <div class="footer-divider"></div>
+      
+      <a href="https://www.instagram.com/fpc_at_kamarajcollege/?__pwa=1" target="_blank" rel="noopener noreferrer" class="footer-logo">
+        <img src="womens kam clg.png" alt="Women's FACE Prep Campus" class="footer-logo-img">
+        <div class="footer-logo-text">FPC @ Women's Kamaraj College</div>
       </a>
     </div>
     
@@ -1691,20 +1662,16 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Initialize AOS animations
     AOS.init({ duration: 1000, once: true });
 
-    // Header Scroll Effect
     window.addEventListener('scroll', () => {
       const header = document.getElementById('header');
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMobile = document.getElementById('navMobile');
     
@@ -1712,29 +1679,18 @@
       navMobile.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-mobile a').forEach(link => {
       link.addEventListener('click', () => {
         navMobile.classList.remove('active');
       });
     });
-   // Click on logo or logo text - your existing code
-document.getElementById("goHome").addEventListener("click", (event) => {
-    event.preventDefault();
-    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-});
 
-// Click on header background area (but not nav items)
-document.getElementById("headerHomeArea").addEventListener("click", (event) => {
-    // Only trigger if clicking on the background area itself, not on nav items
-    if (event.target === document.getElementById("headerHomeArea") || 
-        event.target.closest('.logo-text') || 
-        event.target.closest('#goHome')) {
-        document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-    }
-});
-document.getElementById("header").addEventListener("click", e => !e.target.closest('nav') && !e.target.closest('.menu-toggle') && document.getElementById("home").scrollIntoView({behavior:"smooth"}));
-    // Global Countdown Timer
+    document.getElementById("header").addEventListener("click", e => {
+      if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+        document.getElementById("home").scrollIntoView({behavior:"smooth"});
+      }
+    });
+
     const targetDate = new Date("January 23, 2026 09:00:00").getTime();
     
     function updateCountdown() {
@@ -1746,13 +1702,6 @@ document.getElementById("header").addEventListener("click", e => !e.target.close
       const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
       const s = Math.floor((gap % (1000 * 60)) / 1000);
 
-      // Update main countdown
-      document.getElementById("days").innerText = d < 10 ? '0'+d : d;
-      document.getElementById("hours").innerText = h < 10 ? '0'+h : h;
-      document.getElementById("minutes").innerText = m < 10 ? '0'+m : m;
-      document.getElementById("seconds").innerText = s < 10 ? '0'+s : s;
-
-      // Update secondary countdown
       document.getElementById("days2").innerText = d < 10 ? '0'+d : d;
       document.getElementById("hours2").innerText = h < 10 ? '0'+h : h;
       document.getElementById("minutes2").innerText = m < 10 ? '0'+m : m;

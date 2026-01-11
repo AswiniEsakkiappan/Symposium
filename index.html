@@ -12,17 +12,17 @@
 
   <style>
     :root {
-      --primary: #007AFF;
+      --primary: #007AFF;         /* Electric Cobalt */
       --primary-glow: rgba(0, 122, 255, 0.5);
-      --secondary: #6B21A8;
-      --bg-dark: #020617;
-      --surface: rgba(15, 23, 42, 0.7);
+      --secondary: #6B21A8;      /* Purple for accents */
+      --bg-dark: #020617;        /* Obsidian Midnight */
+      --surface: rgba(15, 23, 42, 0.7); /* Glass Slate */
       --glass-border: rgba(255, 255, 255, 0.1);
       --text-main: #f8fafc;
       --text-dim: #94a3b8;
-      --success: #10B981;
-      --warning: #F59E0B;
-      --danger: #EF4444;
+      --success: #10B981;        /* Emerald for success states */
+      --warning: #F59E0B;        /* Amber for warnings */
+      --danger: #EF4444;         /* Red for errors */
     }
 
     * {
@@ -42,6 +42,7 @@
       padding-top: 100px;
     }
 
+    /* Background Video & Overlays */
     #bg-video {
       position: fixed;
       top: 0;
@@ -63,6 +64,7 @@
       z-index: -1;
     }
 
+    /* Floating Glass Header */
     header {
       position: fixed;
       top: 20px;
@@ -83,7 +85,6 @@
       border-radius: 100px;
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
     }
 
     header.scrolled {
@@ -102,7 +103,6 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      pointer-events: auto;
     }
 
     .logo img {
@@ -126,7 +126,6 @@
     .nav-desktop {
       display: flex;
       gap: 5px;
-      pointer-events: auto;
     }
 
     .nav-desktop a {
@@ -153,6 +152,7 @@
       box-shadow: 0 4px 15px var(--primary-glow);
     }
 
+    /* Mobile Menu Toggle */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -160,7 +160,6 @@
       width: 30px;
       height: 25px;
       justify-content: space-between;
-      pointer-events: auto;
     }
 
     .menu-toggle span {
@@ -171,6 +170,7 @@
       transition: 0.3s;
     }
 
+    /* Mobile Navigation */
     .nav-mobile {
       display: none;
       position: fixed;
@@ -215,20 +215,22 @@
       border-left: 4px solid #fff;
     }
 
+    /* Main Content */
     main {
       position: relative;
       z-index: 1;
     }
 
+    /* Hero Section */
     .hero {
-      padding: 60px 0 40px;
+      padding: 160px 0 60px;
       text-align: center;
     }
 
     .hero-img {
       max-width: 550px;
       width: 85%;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       filter: drop-shadow(0 0 30px var(--primary-glow));
       animation: float 4s ease-in-out infinite;
     }
@@ -245,7 +247,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -254,20 +256,63 @@
       font-size: 18px;
       color: var(--text-dim);
       max-width: 800px;
-      margin: 0 auto 30px;
+      margin: 0 auto 40px;
       line-height: 1.6;
     }
 
+    /* Countdown Grid */
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px auto;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: var(--surface);
+      border: 1px solid var(--glass-border);
+      width: 100px;
+      padding: 15px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .countdown-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .countdown-item h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0;
+      text-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .countdown-item p {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    /* Reminder Section */
     .reminder-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 30px;
       max-width: 1200px;
-      margin: 40px auto;
+      margin: 60px auto;
       align-items: center;
     }
 
-    .reminder-box,  .countdown-box {
+    .reminder-box, .center-logo, .countdown-box {
       background: var(--surface);
       border: 1px solid var(--glass-border);
       padding: 25px;
@@ -340,6 +385,7 @@
       letter-spacing: 1px;
     }
 
+    /* About Section */
     .about-box {
       background: var(--surface);
       border: 1px solid var(--glass-border);
@@ -373,6 +419,7 @@
       font-size: 17px;
     }
 
+    /* Event Cards */
     .event-section {
       padding: 80px 0;
     }
@@ -468,6 +515,7 @@
       transform: translateY(-2px);
     }
 
+    /* Gallery Section */
     .gallery-section {
       padding: 80px 0;
     }
@@ -508,6 +556,7 @@
       line-height: 1.6;
     }
 
+    /* Glass Cards for Gallery */
     .glass-card {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
@@ -571,19 +620,20 @@
       color: var(--text-dim);
     }
 
+    /* Footer */
     footer {
       background: rgba(15, 23, 42, 0.8);
       border-top: 1px solid var(--glass-border);
-      padding: 25px 0 15px;
-      margin-top: 40px;
+      padding: 40px 0 20px;
+      margin-top: 60px;
     }
 
     .footer-logos {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
-      margin-bottom: 20px;
+      gap: 40px;
+      margin-bottom: 30px;
       flex-wrap: wrap;
     }
 
@@ -591,13 +641,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       text-decoration: none;
-      width: 160px;
     }
 
     .footer-logo-img {
-      width: 70px;
+      width: 100px;
       height: auto;
       transition: transform 0.3s;
       filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
@@ -609,26 +658,25 @@
 
     .footer-logo-text {
       color: var(--text-dim);
-      font-size: 12px;
+      font-size: 14px;
       text-align: center;
-      line-height: 1.3;
     }
 
     .footer-divider {
-      height: 40px;
+      height: 60px;
       width: 1px;
       background: var(--glass-border);
     }
 
     .footer-copyright {
       text-align: center;
-      padding-top: 15px;
+      padding-top: 20px;
       border-top: 1px solid var(--glass-border);
       color: var(--text-dim);
-      font-size: 13px;
-      line-height: 1.4;
+      font-size: 14px;
     }
 
+    /* Responsive Design */
     @media (max-width: 1100px) {
       .reminder-container {
         grid-template-columns: 1fr;
@@ -669,7 +717,7 @@
       }
       
       .hero {
-        padding: 60px 0 30px;
+        padding: 120px 0 40px;
       }
       
       .motto-title {
@@ -705,30 +753,18 @@
       .nav-mobile {
         top: 85px;
       }
-      
-      .footer-logos {
-        gap: 15px;
-        flex-direction: row;
-        justify-content: center;
-      }
-      
-      .footer-logo {
-        width: 100px;
-      }
-      
-      .footer-logo-img {
-        width: 40px;
-      }
-      
-      .footer-divider {
-        height: 30px;
-      }
-      .footer-logo-text{
-        font-size: 10px;
-      }
     }
 
     @media (max-width: 480px) {
+      .countdown-item {
+        width: 80px;
+        padding: 12px;
+      }
+      
+      .countdown-item h2 {
+        font-size: 24px;
+      }
+      
       .countdown-box h1 {
         font-size: 24px;
       }
@@ -738,33 +774,21 @@
       }
       
       .footer-logos {
-        gap: 10px;
-        flex-direction: row;
-        justify-content: center;
-        
-      }
-      
-      .footer-logo {
-        width: 90px;
-      }
-      
-      .footer-logo-img {
-        width: 35px;
-      }
-      
-      .footer-logo-text {
-        font-size: 9px;
+        flex-direction: column;
+        gap: 30px;
       }
       
       .footer-divider {
-        display: none;
+        height: 1px;
+        width: 80%;
       }
-      .logo img{
-        height: 20px;
+      
+      .logo img {
+        height: 35px;
       }
     }
 
-
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
     }
@@ -785,18 +809,20 @@
 </head>
 
 <body>
+  <!-- Video Background -->
   <video id="bg-video" autoplay muted loop playsinline>
-    <source src="logo vid.mp4" type="video/mp4">
+    <source src="Images/bg.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="video-overlay"></div>
 
-  <header id="header">
-    <div class="header-home-area" id="headerHomeArea">
-      <a href="#home" class="logo" id="goHome">
-        <img src="visivibelogo-removebg-preview.png" alt="Visionary Vibes Logo">
-        <div class="logo-text">Visionary<span>Vibes</span></div>
-      </a>
+  <!-- Header -->
+   <header id="header">
+  <div class="header-home-area" id="headerHomeArea">
+        <a href="#home" class="logo" id="goHome">
+            <img src="Images/visivibelogo-removebg-preview.png" alt="Visionary Vibes Logo">
+            <div class="logo-text">Visionary<span>Vibes</span></div>
+        </a>
     </div>
 
     <nav class="nav-desktop">
@@ -813,6 +839,7 @@
     </div>
   </header>
 
+  <!-- Mobile Navigation -->
   <nav class="nav-mobile" id="navMobile">
     <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
     <a href="#events"><i class="fas fa-calendar-alt"></i> Events</a>
@@ -820,16 +847,38 @@
     <a href="contactpage.html"><i class="fas fa-phone"></i> Contact Us</a>
   </nav>
 
+  <!-- Main Content -->
   <main class="container">
+    <!-- Hero Section -->
     <section class="hero" id="home" data-aos="fade-up">
-      <img src="visii.png" alt="Visionary Vibe" class="hero-img">
+      <img src="Images/visi.jpeg" alt="Visionary Vibe" class="hero-img">
       <h1 class="motto-title">Where Ideas Collide & Creativity Ignites</h1>
       <p class="hero-text">
         VISIONARY VIBES is where ideas collide, skills ignite, and creativity goes full beast mode.
         With 10 power-packed technical and non-technical events, it's a playground for thinkers, builders, and rule-breakers alike.
       </p>
+       
+       <div class="countdown-grid">
+        <div class="countdown-item">
+          <h2 id="days">00</h2>
+          <p>Days</p>
+        </div>
+        <div class="countdown-item">
+          <h2 id="hours">00</h2>
+          <p>Hours</p>
+        </div>
+        <div class="countdown-item">
+          <h2 id="minutes">00</h2>
+          <p>Minutes</p>
+        </div>
+        <div class="countdown-item">
+          <h2 id="seconds">00</h2>
+          <p>Seconds</p>
+        </div>
+      </div>
     </section>
 
+    <!-- Reminder Section -->
     <div class="reminder-container" data-aos="fade-up">
       <div class="reminder-box">
         <h3 class="reminder-title"><i class="fas fa-bell"></i> Important Reminder</h3>
@@ -837,7 +886,7 @@
       </div>
       
       <div class="center-logo">
-        <img src="visivibelogo-removebg-preview.png" alt="Visionary Vibes Logo">
+        <img src="Images/visivibelogo-removebg-preview.png" alt="Visionary Vibes Logo">
       </div>
       
       <div class="countdown-box">
@@ -860,6 +909,7 @@
       </div>
     </div>
 
+    <!-- About Section -->
     <section class="about-box" data-aos="fade-up">
       <h2>About FACEPrep Campus</h2>
       <p class="tagline">Dream • Define • Do</p>
@@ -872,6 +922,7 @@
       </p>
     </section>
 
+    <!-- Events Section -->
     <section id="events" class="event-section">
       <div class="section-title" data-aos="fade-up">
         <h2>Power Events</h2>
@@ -879,6 +930,7 @@
       </div>
 
       <div class="row g-4">
+        <!-- Event 1: BUG BLITZ -->
         <div class="col-md-4" data-aos="zoom-in">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/debuglogo.jpeg" class="event-img" alt="Bug Blitz">
@@ -886,11 +938,12 @@
               <h5 class="fw-bold">BUG BLITZ</h5>
               <p class="event-tagline">Where Error Meets Expertise</p>
               <p class="event-desc">Debug real-world coding challenges with speed and precision.</p>
-              <a href="bugblitzdescription.html" class="btn-action">View Details</a>
+              <a href="Description/bugblitzdescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 2: BRAINX -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Quiz logo.jpeg" class="event-img" alt="BrainX">
@@ -898,35 +951,38 @@
               <h5 class="fw-bold">BRAINX</h5>
               <p class="event-tagline">Neural Knockout</p>
               <p class="event-desc">Test your logic, speed, and accuracy in this mind-bending quiz.</p>
-              <a href="brainXdescription.html" class="btn-action">View Details</a>
+              <a href="Description/brainXdescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 3: VISION VAULT -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="event-card">
-            <img src="vision vault.jpeg" class="event-img" alt="Vision Vault">
+            <img src="Images/vision vault.jpeg" class="event-img" alt="Vision Vault">
             <div class="card-body">
               <h5 class="fw-bold">VISION VAULT</h5>
               <p class="event-tagline">Research Meets Reality</p>
               <p class="event-desc">Present groundbreaking ideas that shape the future of technology.</p>
-              <a href="Visionvaultdescription.html" class="btn-action">View Details</a>
+              <a href="Description/Visionvaultdescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 4: THE CRUCIBLE -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="event-card">
-            <img src="crucible.jpeg" class="event-img" alt="The Crucible">
+            <img src="Images/crucible.jpeg" class="event-img" alt="The Crucible">
             <div class="card-body">
               <h5 class="fw-bold">THE CRUCIBLE</h5>
               <p class="event-tagline">Leadership Under Pressure</p>
               <p class="event-desc">Test your decision-making and leadership skills in high-pressure scenarios.</p>
-              <a href="crucibleredescription.html" class="btn-action">View Details</a>
+              <a href="Description/crucibleredescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 5: MAKEIT WEB -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/makeitweblogo.jpeg" class="event-img" alt="MAKEIT Web">
@@ -934,35 +990,38 @@
               <h5 class="fw-bold">MAKEIT WEB</h5>
               <p class="event-tagline">Web Designing Challenge</p>
               <p class="event-desc">Design responsive, modern websites that push creative boundaries.</p>
-              <a href="makeitwebdescription.html" class="btn-action">View Details</a>
+              <a href="Description/makeitwebdescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 6: READY SET HOST -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="event-card">
-            <img src="anchoringimg.jpg" class="event-img" alt="Ready Set Host">
+            <img src="Images/anchoringimg.jpg" class="event-img" alt="Ready Set Host">
             <div class="card-body">
               <h5 class="fw-bold">READY SET HOST</h5>
               <p class="event-tagline">Anchoring Excellence</p>
               <p class="event-desc">Showcase your confidence, stage presence, and hosting skills.</p>
-              <a href="anchoringdescription.html" class="btn-action">View Details</a>
+              <a href="Description/anchoringdescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 7: FLYER NOVA -->
         <div class="col-md-4" data-aos="zoom-in">
           <div class="event-card">
-            <img src="ADZAPphoto.jpg" class="event-img" alt="Flyer Nova">
+            <img src="Images/ADZAPphoto.jpg" class="event-img" alt="Flyer Nova">
             <div class="card-body">
               <h5 class="fw-bold">FLYER NOVA</h5>
               <p class="event-tagline">Creative Marketing Challenge</p>
               <p class="event-desc">Design compelling marketing campaigns that captivate audiences.</p>
-              <a href="adzapdescription.html" class="btn-action">View Details</a>
+              <a href="Description/adzapdescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 8: THINK THRUST -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/thinkthrustlogo.jpg" class="event-img" alt="Think Thrust">
@@ -970,11 +1029,12 @@
               <h5 class="fw-bold">THINK THRUST</h5>
               <p class="event-tagline">Aptitude Acceleration</p>
               <p class="event-desc">Speed + smart problem solving for the analytical mind.</p>
-              <a href="thinkthrustdescription.html" class="btn-action">View Details</a>
+              <a href="Description/thinkthrustdescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 9: CORP VISTA -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/cropvista.jpeg" class="event-img" alt="Corp Vista">
@@ -982,11 +1042,12 @@
               <h5 class="fw-bold">CORP VISTA</h5>
               <p class="event-tagline">Corporate Walk</p>
               <p class="event-desc">Professional attitude, style, and corporate presence.</p>
-              <a href="CorpvistaDescription.html" class="btn-action">View Details</a>
+              <a href="Description/corpvistadescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
 
+        <!-- Event 10: FINOVA -->
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="event-card">
             <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/finova.png" class="event-img" alt="Finova">
@@ -994,13 +1055,14 @@
               <h5 class="fw-bold">FINOVA</h5>
               <p class="event-tagline">Advanced Finance Strategies</p>
               <p class="event-desc">Modern financial strategies for the next generation of leaders.</p>
-              <a href="Finovadescription.html" class="btn-action">View Details</a>
+              <a href="Description/Finovadescription.html" class="btn-action">View Details</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Gallery Section -->
     <section id="gallerys" class="gallery-section">
       <div class="gallery-header" data-aos="fade-down">
         <h1>Gallery</h1>
@@ -1008,7 +1070,9 @@
         <p>Showcasing the academic spirit of Kamaraj College x FACE Prep Campus. Rooted in excellence and innovation.</p>
       </div>
 
+      <!-- BCA Batch Gallery Cards -->
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <!-- BCA Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1044,6 +1108,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1070,6 +1135,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 3 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCA3" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1105,6 +1171,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 4 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA4" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1134,6 +1201,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 5 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA5" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1166,6 +1234,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 6 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCA6" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1198,6 +1267,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 7 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA7" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1233,6 +1303,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 8 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA8" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1256,6 +1327,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 9 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCA9" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1282,6 +1354,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 10 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCA10" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1311,6 +1384,7 @@
           </div>
         </div>
 
+        <!-- BCA Card 11 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCA11" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1341,12 +1415,14 @@
         </div>
       </div>
 
+      <!-- BCA-A,B Batch 2025-2028 Section -->
       <div class="gallery-header mt-5" data-aos="fade-down">
         <div class="batch-badge">BCA-A,B BATCH 2025-2028</div>
         <p>A place to explore knowledge and skills - learn, innovate and shape our future!</p>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <!-- BCA New Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBCAnew1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1376,6 +1452,7 @@
           </div>
         </div>
 
+        <!-- BCA New Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBCAnew2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1405,6 +1482,7 @@
           </div>
         </div>
 
+        <!-- BCA New Card 3 -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCAnew3" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1435,12 +1513,14 @@
         </div>
       </div>
 
+      <!-- BBA Batch 2025-2028 Section -->
       <div class="gallery-header mt-5" data-aos="fade-down">
         <div class="batch-badge">BBA BATCH 2025-2028</div>
         <p>Nurturing leadership, entrepreneurship, and ethical business practices.</p>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <!-- BBA Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBBA1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1464,6 +1544,7 @@
           </div>
         </div>
 
+        <!-- BBA Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBBA2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1490,6 +1571,7 @@
           </div>
         </div>
 
+        <!-- B.Com Card -->
         <div class="col" data-aos="fade-up" data-aos-delay="300">
           <div class="glass-card">
             <div id="carouselBCom1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1520,12 +1602,14 @@
         </div>
       </div>
 
+      <!-- BSc CS with AI Section -->
       <div class="gallery-header mt-5" data-aos="fade-down">
         <div class="batch-badge">BSc CS with AI 2025-2028</div>
         <p>Empowering students with financial knowledge and strong computing foundations.</p>
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- BSc Card 1 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
           <div class="glass-card">
             <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1549,6 +1633,7 @@
           </div>
         </div>
 
+        <!-- BSc Card 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="200">
           <div class="glass-card">
             <div id="carouselBSc2" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -1581,123 +1666,78 @@
           </div>
         </div>
 
-        <div class="col" data-aos="fade-up" data-aos-delay="300">
-          <div class="glass-card">
-            <div id="carouselBSc3" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf1.jpeg" class="d-block w-100" alt="Youth Festival">
+         <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card glass-card h-100 border-0">
+                        <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf1.jpeg" class="d-block w-100"></div>
+                                <div class="carousel-item" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf2.jpeg" class="d-block w-100"></div>
+                                <div class="carousel-item" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf3.jpeg" class="d-block w-100"></div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="batch-badge">Talent</span>
+                           <h5 class="card-title">youth festival</h5>
+                            <p class="card-text">Youth Festival: Dream • Perform • Shine!</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf2.jpeg" class="d-block w-100" alt="Youth Festival">
-                </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/youthf3.jpeg" class="d-block w-100" alt="Youth Festival">
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="batch-badge">Talent</span>
-              <h5 class="card-title">Youth Festival</h5>
-              <p class="card-text">Youth Festival: Dream • Perform • Shine!</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="col" data-aos="fade-up" data-aos-delay="100">
-          <div class="glass-card">
-            <div id="carouselBSc4" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/Achievment1.jpeg" class="d-block w-100" alt="Achievements">
+                <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card glass-card h-100 border-0">
+                        <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/Achievment1.jpeg" class="d-block w-100"></div>
+                                <div class="carousel-item" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/Achievment2.jpeg" class="d-block w-100"></div>
+                                <div class="carousel-item" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/Achievment3.jpeg" class="d-block w-100"></div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="batch-badge">Success</span>
+                           <h5 class="card-title">Achievements</h5>
+                            <p class="card-text">Success made possible by teamwork!!</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/Achievment2.jpeg" class="d-block w-100" alt="Achievements">
-                </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/Achievment3.jpeg" class="d-block w-100" alt="Achievements">
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="batch-badge">Success</span>
-              <h5 class="card-title">Achievements</h5>
-              <p class="card-text">Success made possible by teamwork!</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="col" data-aos="fade-up" data-aos-delay="200">
-          <div class="glass-card">
-            <div id="carouselBSc5" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/exi1.jpeg" class="d-block w-100" alt="Exhibition">
+                <div class="col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card glass-card h-100 border-0">
+                        <div id="carouselBSc1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/exi1.jpeg" class="d-block w-100"></div>
+                                <div class="carousel-item" data-bs-interval="2400"><img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/exi2.jpeg" class="d-block w-100"></div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="batch-badge">Dreamspace</span>
+                           <h5 class="card-title">Exbhition</h5>
+                            <p class="card-text">Young minds, big ideas!!!</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/linked/exi2.jpeg" class="d-block w-100" alt="Exhibition">
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="batch-badge">DreamSpace</span>
-              <h5 class="card-title">Exhibition</h5>
-              <p class="card-text">Young minds, big ideas!</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col" data-aos="fade-up" data-aos-delay="300">
-          <div class="glass-card">
-            <div id="carouselBSc6" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/IMG_3386.JPG" class="d-block w-100" alt="I B.Sc CS with AI">
-                </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Monica S.jpg" class="d-block w-100" alt="I B.Sc CS with AI">
-                </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Villaswathi P.jpg" class="d-block w-100" alt="I B.Sc CS with AI">
-                </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Meera Raliya M I.jpg" class="d-block w-100" alt="I B.Sc CS with AI">
-                </div>
-                <div class="carousel-item" data-bs-interval="2400">
-                  <img src="https://raw.githubusercontent.com/RakshanaQ/Gallery/main/IGNITIA/Supriya S.jpg" class="d-block w-100" alt="I B.Sc CS with AI">
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="batch-badge">Science</span>
-              <h5 class="card-title">I B.Sc CS with AI</h5>
-              <p class="card-text">An innovative event where applications are created without writing a single line of code!</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-logos">
       <a href="https://www.instagram.com/fpc_at_kamarajcollege/?__pwa=1" target="_blank" rel="noopener noreferrer" class="footer-logo">
-        <img src="kamarj logo.png" alt="Kamaraj College" class="footer-logo-img">
+        <img src="Images/kamarj logo.png" alt="Kamaraj College" class="footer-logo-img">
         <div class="footer-logo-text">FPC @ Kamaraj College</div>
       </a>
       
       <div class="footer-divider"></div>
       
       <a href="https://www.instagram.com/faceprep_campus/?__pwa=1" target="_blank" rel="noopener noreferrer" class="footer-logo">
-        <img src="facelogo.png" alt="FACE Prep Campus" class="footer-logo-img">
+        <img src="Images/facelogo.png" alt="FACE Prep Campus" class="footer-logo-img">
         <div class="footer-logo-text">FACE Prep Campus</div>
       </a>
 
       <div class="footer-divider"></div>
       
       <a href="https://www.instagram.com/fpc_at_kamarajcollege/?__pwa=1" target="_blank" rel="noopener noreferrer" class="footer-logo">
-        <img src="womens kam clg.png" alt="Women's FACE Prep Campus" class="footer-logo-img">
+        <img src="Images/womens kam clg.png" alt="Women's FACE Prep Campus" class="footer-logo-img">
         <div class="footer-logo-text">FPC @ Women's Kamaraj College</div>
       </a>
     </div>
@@ -1708,16 +1748,20 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Initialize AOS animations
     AOS.init({ duration: 1000, once: true });
 
+    // Header Scroll Effect
     window.addEventListener('scroll', () => {
       const header = document.getElementById('header');
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
 
+    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMobile = document.getElementById('navMobile');
     
@@ -1725,18 +1769,29 @@
       navMobile.classList.toggle('active');
     });
 
+    // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-mobile a').forEach(link => {
       link.addEventListener('click', () => {
         navMobile.classList.remove('active');
       });
     });
+   // Click on logo or logo text - your existing code
+document.getElementById("goHome").addEventListener("click", (event) => {
+    event.preventDefault();
+    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+});
 
-    document.getElementById("header").addEventListener("click", e => {
-      if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
-        document.getElementById("home").scrollIntoView({behavior:"smooth"});
-      }
-    });
-
+// Click on header background area (but not nav items)
+document.getElementById("headerHomeArea").addEventListener("click", (event) => {
+    // Only trigger if clicking on the background area itself, not on nav items
+    if (event.target === document.getElementById("headerHomeArea") || 
+        event.target.closest('.logo-text') || 
+        event.target.closest('#goHome')) {
+        document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+    }
+});
+document.getElementById("header").addEventListener("click", e => !e.target.closest('nav') && !e.target.closest('.menu-toggle') && document.getElementById("home").scrollIntoView({behavior:"smooth"}));
+    // Global Countdown Timer
     const targetDate = new Date("January 23, 2026 09:00:00").getTime();
     
     function updateCountdown() {
@@ -1748,6 +1803,13 @@
       const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
       const s = Math.floor((gap % (1000 * 60)) / 1000);
 
+      // Update main countdown
+      document.getElementById("days").innerText = d < 10 ? '0'+d : d;
+      document.getElementById("hours").innerText = h < 10 ? '0'+h : h;
+      document.getElementById("minutes").innerText = m < 10 ? '0'+m : m;
+      document.getElementById("seconds").innerText = s < 10 ? '0'+s : s;
+
+      // Update secondary countdown
       document.getElementById("days2").innerText = d < 10 ? '0'+d : d;
       document.getElementById("hours2").innerText = h < 10 ? '0'+h : h;
       document.getElementById("minutes2").innerText = m < 10 ? '0'+m : m;
